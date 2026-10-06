@@ -2,7 +2,7 @@
 
 **Production demo:** https://lasr-scaleops.vercel.app/
 
-The route is verified against the repository’s synthetic seed. Independent verification of the deployed host awaits test-network access.
+The production page is publicly reachable. The walkthrough is validated against the repository’s synthetic seed and the passing browser suite; the Codex cloud cannot rerun that suite directly against Vercel because its egress proxy blocks the hostname.
 
 Use a desktop window at least 1280px wide. Start from Winter ’27 in Cohort Control. If you have already explored, open **Demo controls → Reset demo state → Reset demo data** first. All names and policies are fictional. Changes persist in this browser only.
 

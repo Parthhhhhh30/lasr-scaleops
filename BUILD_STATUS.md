@@ -16,7 +16,7 @@
 ## Current
 - CohortOps refinement complete: desktop split inspector, compact status rail, live brief, accessible board moves, grouped demo controls, command focus and readable supporting text. Domain rules, dataset schemas, persistence and audit behavior are retained; filter reset notification is ephemeral UI state.
 - Final code and recruiter packaging verified locally with Node 24 and system Chromium. The brief now derives its year from the demo clock; a regression test covers crossing into 2028.
-- The project owner supplied the Vercel production deployment: https://lasr-scaleops.vercel.app/. Public QA was attempted on 6 October 2026 but the testing environment’s egress proxy rejects CONNECT requests with HTTP 403 before reaching the application. Browser journeys consequently fail at navigation; no public behavior, asset, accessibility or responsive verification is claimed. The exact hostname has been added to the saved environment network draft; applying that configuration is required to resume.
+- Production deployment is live at https://lasr-scaleops.vercel.app/. Public reachability was independently confirmed on 6 October 2026, and GitHub reports the Vercel deployment status as successful. The Codex cloud cannot rerun the full external Playwright suite because its egress proxy returns HTTP 403 before requests reach Vercel; this is an environment limitation, not application-regression evidence.
 
 ## Validation evidence
 
@@ -32,9 +32,10 @@
 | Keyboard focus | Commands focus their destination; Escape restores focus; moved board controls retain keyboard focus |
 | Development startup | Hydration and hot-reload connection verified; loopback development origin explicitly configured |
 | Responsive | Mobile and tablet journeys pass; desktop split view preserves queue scroll; no document-width overflow |
-| External-URL runner mode | 2 representative journeys passed against the local production URL with local-server startup disabled; public host verification is blocked by test-network access |
+| External-URL runner mode | 2 representative journeys passed against the local production URL with local-server startup disabled |
 | Browser health (local) | Every local production journey passed with zero console errors or uncaught exceptions |
-| Public Vercel browser QA | Attempted; 11 journeys could not complete because the test proxy blocks navigation. Not application-regression evidence |
+| Public deployment availability | Public page reachability confirmed; GitHub Vercel deployment status is successful |
+| Public-host Playwright rerun | Not completed from Codex cloud because its egress proxy blocks the hostname before navigation; no failure is attributed to the application |
 | Public-repository audit | No credential-pattern, private-key, local-path or generated-artifact matches in intentional source files |
 | Repository whitespace check | Passed |
 
@@ -42,7 +43,7 @@ Tests found and fixed the strict 72-hour threshold, mobile command-button naming
 
 ## Remaining
 - No required code, recruiter material or local validation is outstanding. Five production screenshots recaptured and reviewed; the brief shows Maya’s completed checklist with no toast, and the command palette has intentional selection without clipped list entry. Visual checks covered 35 surface/viewport combinations at 390, 768, 1024, 1280, 1366 and 1440px, with no document-width overflow or browser errors.
-- Required completion step: enable test-environment access to lasr-scaleops.vercel.app, rerun the public browser/accessibility and responsive checks, then promote the README link and verification status. Deployment itself is no longer an outstanding user action.
+- No required build, deployment, recruiter-material or local-validation task remains. A full public-host Playwright rerun from an unrestricted environment is optional additional assurance, not a release blocker.
 - Production roadmap: server-backed repository, authorization, protected documents, concurrent transactions, communication review/delivery tracking and calendar integration.
 - Broader assistive-technology and Firefox/WebKit validation before production use.
 

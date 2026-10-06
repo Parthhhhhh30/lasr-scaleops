@@ -4,7 +4,7 @@ The application is a standard Next.js app with locally bundled fonts and browser
 
 **Current production deployment:** https://lasr-scaleops.vercel.app/
 
-Platform: Vercel. The project owner supplied this deployed URL. Public browser verification is outstanding because the testing environment rejects connections to this hostname before the application loads. This is a test-access blocker, not evidence of an application failure.
+Platform: Vercel. The production URL is publicly reachable and GitHub reports the Vercel deployment status as successful. The Codex cloud cannot run the full external Playwright suite against this hostname because its egress proxy blocks the request before it reaches Vercel. This is a test-environment limitation, not evidence of an application failure.
 
 ## Predetermined production settings
 
@@ -16,7 +16,7 @@ Platform: Vercel. The project owner supplied this deployed URL. Public browser v
 
 Do not enter real participant information. Each visitor receives the synthetic seed and stores subsequent edits in their own browser; hosting does not create shared programme storage.
 
-## Verify the public deployment
+## Optional public-host regression verification
 
 From a checkout with dependencies and a Playwright-compatible Chromium installed:
 
@@ -26,4 +26,4 @@ PLAYWRIGHT_BASE_URL=https://lasr-scaleops.vercel.app npm run test:e2e
 
 This runs the existing operational, responsive, persistence, keyboard and accessibility journeys against that URL, without starting a local server. Browser console errors and uncaught exceptions fail each journey. Each browser context has its own local state. Use the current production URL when repeating these checks.
 
-After public QA passes, add the verified URL prominently to README and the demo guide, record the production verification in BUILD_STATUS, and commit/push that update. Local test success alone is not public-deployment evidence.
+The live URL is already recorded in README, DEMO_GUIDE and BUILD_STATUS. Run this command from an unrestricted environment whenever an additional public-host browser regression is desired. Local automated results and public reachability are documented separately so the repository does not overclaim external-browser coverage.

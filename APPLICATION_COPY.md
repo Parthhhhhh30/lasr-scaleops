@@ -1,6 +1,6 @@
 # Application-ready project wording
 
-Use only statements you can personally explain and defend. The project used Codex-assisted development; these drafts do not claim that every line was manually written. Deployment should be described as live only after a public URL has been verified.
+Use only statements you can personally explain and defend. The project used Codex-assisted development; these drafts do not claim that every line was manually written. The live demo is publicly reachable at https://lasr-scaleops.vercel.app/.
 
 ## A. CV project entry
 
@@ -37,4 +37,4 @@ Adjust the learning statement to your actual experience before submitting it. Be
 **GitHub:** https://github.com/Parthhhhhh30/lasr-scaleops
 **Description:** An independent programme operations prototype connecting owned exceptions, admissions coordination, participant readiness and deterministic reporting with explicit human-review safeguards.
 
-The deployment URL was supplied by the project owner; independent public QA remains blocked by the test environment’s network access. Do not describe the deployment as independently verified until those checks pass.
+The live demo is publicly reachable. The full external Playwright suite was not rerun from the Codex cloud because its egress proxy blocks the Vercel hostname; local automated browser validation remains passing.

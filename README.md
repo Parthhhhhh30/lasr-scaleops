@@ -2,6 +2,8 @@
 
 **CohortOps — an independent programme operations prototype designed around the LASR Programme Operations Associate use case.**
 
+**Live demo:** https://lasr-scaleops.vercel.app/
+
 A cohort operating workspace for the coordination work between an application and a supported research participant. It is not affiliated with LASR or Arcadia Impact. The repository remains `lasr-scaleops`.
 
 **Synthetic demonstration data — not LASR internal data.** Names, programme dates, teams, rooms, checklists and operational policies are fictional. This is not an official LASR product and makes no claim about its internal processes.
@@ -36,7 +38,9 @@ Changes persist locally across refreshes. Reset clears changes, notes and remind
 
 ## Public deployment
 
-The project owner has deployed the application to https://lasr-scaleops.vercel.app/. No database or runtime secrets are required. Independent public browser verification is blocked by the test environment’s network access. [DEPLOYMENT.md](DEPLOYMENT.md) records the production URL, reproduction settings and public QA command.
+**Live demo:** https://lasr-scaleops.vercel.app/
+
+The production site is publicly reachable, and GitHub reports the Vercel deployment status as successful. The full external Playwright regression suite could not be rerun from the Codex cloud because that environment's egress proxy blocks the Vercel hostname before requests reach the application. The same 11 browser journeys pass against the production build locally, so this is recorded as an environment limitation rather than an application failure. [DEPLOYMENT.md](DEPLOYMENT.md) records the production URL and repeatable QA command.
 
 ## Running locally
 
