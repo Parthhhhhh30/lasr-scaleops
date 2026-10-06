@@ -1,4 +1,4 @@
-import { test, expect } from "@playwright/test";
+import { test, expect } from "./fixtures";
 test("document check-in updates the queue, checklist and persistent weekly brief", async ({
   page,
 }) => {

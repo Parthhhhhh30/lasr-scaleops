@@ -22,3 +22,6 @@ blob-report/
 *.swo
 *~
 .DS_Store
+
+# Hosting account/project linkage stays local
+.vercel/

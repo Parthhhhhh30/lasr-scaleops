@@ -11,34 +11,37 @@
 - Contextual record inspector: owner assignment, checklist/task completion, stage changes, room movement, sensitive support confirmation, risk acknowledgement, notes and unsent reminder drafts.
 - Real command palette, Ctrl+K / Cmd+K and search shortcuts, keyboard focus restoration, responsive navigation/tables, reduced motion, demo reset and time simulation.
 - All ten required documentation files, five refreshed screenshots and GitHub Actions quality-gate workflow.
-- Cloud environment install_script and start_skill saved in the review draft. Original package-manager network policy retained; no credentials required.
+- Recruiter demo guide, application copy with development-assistance disclosure, and exact Vercel deployment instructions. No runtime credentials required.
 
 ## Current
 - CohortOps refinement complete: desktop split inspector, compact status rail, live brief, accessible board moves, grouped demo controls, command focus and readable supporting text. Domain rules, dataset schemas, persistence and audit behavior are retained; filter reset notification is ephemeral UI state.
-- V1 implemented and verified in this cloud machine. Development and production startup validated with Node 24 and installed system Chromium.
-- Setup/startup draft saved; publication is user-owned and has not been performed. Restoration in a newly published task has not been tested.
+- Final code and recruiter packaging verified locally with Node 24 and system Chromium. The brief now derives its year from the demo clock; a regression test covers crossing into 2028.
+- Public deployment is blocked solely by Vercel account authentication. No hosting connector, CLI session, linked project or deployment credentials are available. See DEPLOYMENT.md for exact import settings and post-deployment QA; no public URL or public-test claim has been added.
 
 ## Validation evidence
 
 | Check | Result |
 | --- | --- |
-| Clean `npm ci` from lockfile | Passed |
+| Clean `npm ci` from lockfile | Previously passed; dependencies and lockfile unchanged in finalization |
 | ESLint | Passed, no lint warnings/errors |
 | TypeScript | Passed |
-| Vitest | 28 passed: 8 domain, 10 state/repository, 10 UI/integration |
+| Vitest | 29 passed: 8 domain, 10 state/repository, 11 UI/integration |
 | Next.js production build | Passed; application and icon prerendered |
-| Playwright production journeys | 9 passed, none skipped |
+| Playwright production journeys | 11 passed, none skipped |
 | Axe WCAG A/AA scan | No detected violations in four workspaces, desktop split inspector, tablet drawer, command dialog and demo controls |
 | Keyboard focus | Commands focus their destination; Escape restores focus; moved board controls retain keyboard focus |
 | Development startup | Hydration and hot-reload connection verified; loopback development origin explicitly configured |
 | Responsive | Mobile and tablet journeys pass; desktop split view preserves queue scroll; no document-width overflow |
+| External-URL runner mode | 2 representative journeys passed against the local production URL with local-server startup disabled; public host remains untested |
+| Browser health | Every production journey passed with zero console errors or uncaught exceptions |
+| Public-repository audit | No credential-pattern, private-key, local-path or generated-artifact matches in intentional source files |
 | Repository whitespace check | Passed |
 
-Tests found and fixed the strict 72-hour threshold, mobile command-button naming, secondary-text contrast and dialog focus restoration. Browser test selectors were corrected to distinguish audit text from transient notification text. The development origin correction follows the installed Next.js documentation. These outcomes are current-instance checks, not claims of deployment or cross-browser certification.
+Tests found and fixed the strict 72-hour threshold, mobile command-button naming, secondary-text contrast and dialog focus restoration. Browser test selectors were corrected to distinguish audit text from transient notification text. The development origin correction follows the installed Next.js documentation. Finalization also checked batch decisions, current clipboard export, source links, invalid room changes, ownership, task completion and risk acknowledgement. These outcomes are local checks, not claims of public deployment or cross-browser certification.
 
 ## Remaining
-- No required refinement implementation or local validation is outstanding. Five production screenshots refreshed; screenshot session recorded no browser errors and four fully visible queue rows at 1366 × 768.
-- Optional external publication/hosting; no external action is needed to run the local prototype.
+- No required code, recruiter material or local validation is outstanding. Five production screenshots recaptured and reviewed; the brief shows Maya’s completed checklist with no toast, and the command palette has intentional selection without clipped list entry. Visual checks covered 35 surface/viewport combinations at 390, 768, 1024, 1280, 1366 and 1440px, with no document-width overflow or browser errors.
+- Required public demo: sign in to Vercel, import Parthhhhhh30/lasr-scaleops with the documented defaults, deploy, and provide the production URL. Public end-to-end QA and the verified README live link must follow.
 - Production roadmap: server-backed repository, authorization, protected documents, concurrent transactions, communication review/delivery tracking and calendar integration.
 - Broader assistive-technology and Firefox/WebKit validation before production use.
 

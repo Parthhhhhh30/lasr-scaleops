@@ -22,7 +22,7 @@ Offer and acceptance changes record reviewer decisions; they do not decide admis
 
 ## Scope choices
 
-V1 includes three cohorts, stage board/table, responsive split-view inspector, local persistence, audit notes, reminder drafts and sensitive-case confirmation. It intentionally avoids hosted infrastructure, generative model calls and charts that do not support a decision. Participant creation from acceptance, dynamic room capacity checking, drag-and-drop booking, alumni management and communications delivery are future extensions. The lifecycle controls the queue; later stages have useful empty states rather than invented activity.
+V1 includes three cohorts, stage board/table, responsive split-view inspector, local persistence, audit notes, reminder drafts and sensitive-case confirmation. Its state remains browser-local even when the application is hosted; it avoids generative model calls and charts that do not support a decision. Participant creation from acceptance, dynamic room capacity checking, drag-and-drop booking, alumni management and communications delivery are future extensions. The lifecycle controls the queue; later stages have useful empty states rather than invented activity.
 
 ## Success criteria
 

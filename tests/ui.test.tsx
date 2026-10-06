@@ -187,3 +187,16 @@ describe("CohortOps interaction refinements", () => {
     expect(useOpsStore.getState().data.now).toBe("2027-01-11T09:00:00.000Z");
   });
 });
+
+it("uses the demonstration clock year in the live brief after crossing a year boundary", () => {
+  const data = createSeed();
+  data.now = "2028-01-02T09:00:00.000Z";
+  useOpsStore.setState({ data, view: "brief" });
+  render(<Workspace />);
+  expect(document.querySelector(".brief-masthead")).toHaveTextContent(
+    "2 Jan 2028",
+  );
+  expect(document.querySelector(".brief-masthead")).not.toHaveTextContent(
+    "2027",
+  );
+});

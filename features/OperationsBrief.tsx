@@ -23,7 +23,9 @@ export function OperationsBrief() {
       <article className="brief-paper">
         <header className="brief-masthead">
           <span className="eyebrow">COHORTOPS / CURRENT STATE</span>
-          <span>{formatDate(s.data.now)} 2027</span>
+          <span>
+            {formatDate(s.data.now)} {new Date(s.data.now).getUTCFullYear()}
+          </span>
         </header>
         <div className="brief-title">
           <span className="brief-issue">LIVE OPERATIONAL BRIEF</span>

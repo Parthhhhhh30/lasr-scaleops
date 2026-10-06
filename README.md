@@ -19,6 +19,10 @@ The role's programme administration, participant support, scheduling, communicat
 - **Participant Ops:** document receipt and human administrative review, onboarding and allocation checklists, team/supervisor context, arrivals and support history.
 - **Operations Brief:** a live memo derived from current records, decisions required, review bottlenecks, readiness, logistics, upcoming milestones and the past seven days of changes.
 
+## Review in 90 seconds
+
+Follow [DEMO_GUIDE.md](DEMO_GUIDE.md) for a causal walkthrough from a document blocker to readiness, a guarded admissions change and the live audit brief. [APPLICATION_COPY.md](APPLICATION_COPY.md) contains truthful CV, application and interview wording, including development assistance.
+
 ## Try the working relationships
 
 1. In Winter ’27, search the attention queue for **Maya** and open her document check-in. Complete the two document items. The document blocker disappears; checklist readiness increases. Complete her access and orientation items to make her checklist-ready.
@@ -29,6 +33,10 @@ The role's programme administration, participant support, scheduling, communicat
 6. Use **⌘K / Ctrl+K** to find a person or run commands. **/** focuses the current search. Escape dismisses the inspector or command menu. Reset is inside Demo controls and restores all synthetic records after confirmation.
 
 Changes persist locally across refreshes. Reset clears changes, notes and reminder drafts. No messages are sent, and no credentials are needed.
+
+## Public deployment
+
+The project is prepared for Vercel, with no database or secrets required. Public deployment is pending account authentication; no live URL has yet been verified. [DEPLOYMENT.md](DEPLOYMENT.md) provides exact import settings and the public browser-QA command.
 
 ## Running locally
 
@@ -88,7 +96,7 @@ Production would require a server-backed repository, relational IDs and constrai
 
 The compact cohort status rail brings the queue into view sooner. Philosophy lives in About and the product documentation; the working surface uses owners, dates and exceptions. Supporting operational text is at least 11px, with 10px section labels. Native board selectors make ordinary stage movement direct and keyboard accessible. Commands focus their result surface or opened inspector. Progress, record entry and split-view transitions remain brief and respect reduced motion.
 
-Updated recruiter-facing screenshots:
+Recruiter-facing screenshots show the seeded workspace and the brief after Maya’s checklist completion:
 
 - [Cohort Control](docs/screenshots/cohort-control.png)
 - [Admissions Flow](docs/screenshots/admissions-flow.png)

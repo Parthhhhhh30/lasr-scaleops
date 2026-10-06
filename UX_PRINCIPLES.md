@@ -18,7 +18,7 @@ Native buttons/selects/checkboxes, semantic tables, visible focus, a skip link a
 
 ## Deliberate constraints
 
-No simulated chatbot, AI-insights card, candidate score, decorative chart or marketing hero. No drag-and-drop admission decisions; the inspector gives a deliberate stage control and human confirmation for offer/acceptance. Snapshot memo text is not a competing source of truth: the visible brief always recomputes.
+No simulated chatbot, AI-insights card, candidate score, decorative chart or marketing hero. No drag-and-drop admission decisions; board tickets and the inspector give deliberate stage controls and human confirmation for offer/acceptance. Copied brief text is an export, not a competing source of truth: the visible brief always recomputes.
 
 Accessibility checks combine DOM semantics, keyboard/browser journeys and automated contrast analysis; automation does not replace assistive-technology review. System-scale changes, real-screen-reader evaluation and additional browsers remain production hardening work.
 
