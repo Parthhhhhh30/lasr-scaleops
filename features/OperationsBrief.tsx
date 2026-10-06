@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ArrowUpRight, Copy, FileCheck2, RefreshCw } from "lucide-react";
+import { ArrowUpRight, Copy, FileCheck2 } from "lucide-react";
 import { useOpsStore } from "@/store/useOpsStore";
 import { weeklyBrief } from "@/domain/OpsEngine";
 import { Empty, formatDate, Tag } from "@/components/ui";
@@ -7,12 +7,11 @@ export function OperationsBrief() {
   const s = useOpsStore(),
     b = weeklyBrief(s.data, s.cohortId),
     c = s.data.cohorts.find((c) => c.id === s.cohortId)!,
-    [generated, setGenerated] = useState<string | null>(null),
     [copyState, setCopyState] = useState("");
   const copy = async () => {
     try {
       await navigator.clipboard.writeText(
-        `${c.name} — Operations brief\nAs of ${formatDate(s.data.now)}\n${b.summary}\n\nDecisions required\n${b.decisions.map((d) => `${d.title} — ${d.owner}`).join("\n")}\n\nUnresolved items\n${b.queue.map((q) => `${q.title}: ${q.detail} — ${q.owner}`).join("\n")}\n\nRecent changes\n${b.recent.map((a) => `${a.action}${a.detail ? ": " + a.detail : ""}`).join("\n")}\n\nSynthetic demonstration data — not LASR internal data.`,
+        `${c.name} — Current Operations Brief\nAs of ${formatDate(s.data.now)}\n${b.summary}\n\nDecisions required\n${b.decisions.map((d) => `${d.title} — ${d.owner}`).join("\n")}\n\nUnresolved items\n${b.queue.map((q) => `${q.title}: ${q.detail} — ${q.owner}`).join("\n")}\n\nRecent changes\n${b.recent.map((a) => `${a.action}${a.detail ? ": " + a.detail : ""}`).join("\n")}\n\nSynthetic demonstration data — not LASR internal data.`,
       );
       setCopyState("Copied");
     } catch {
@@ -23,15 +22,15 @@ export function OperationsBrief() {
     <div className="brief-layout">
       <article className="brief-paper">
         <header className="brief-masthead">
-          <span className="eyebrow">SCALEOPS / OPERATIONS MEMO</span>
+          <span className="eyebrow">COHORTOPS / CURRENT STATE</span>
           <span>{formatDate(s.data.now)} 2027</span>
         </header>
         <div className="brief-title">
-          <span className="brief-issue">WEEKLY BRIEF</span>
+          <span className="brief-issue">LIVE OPERATIONAL BRIEF</span>
           <h2>
             {c.name}
             <br />
-            <em>The operating picture.</em>
+            <em>Current coordination state.</em>
           </h2>
           <p>{b.summary}</p>
         </div>
@@ -181,30 +180,11 @@ export function OperationsBrief() {
       </article>
       <aside className="brief-sidebar">
         <span className="eyebrow">YOUR WORKING BRIEF</span>
-        <h3>Ready for the weekly check-in.</h3>
+        <h3>Live, with source records.</h3>
         <p>
-          This brief recomputes as records change. Every statement can be traced
-          back to a queue or audit event.
+          Recomputed automatically from the current operational state. Every
+          statement can be traced back to a queue or audit event.
         </p>
-        <button
-          className="button primary"
-          onClick={() =>
-            setGenerated(
-              new Date().toLocaleTimeString("en-GB", {
-                hour: "2-digit",
-                minute: "2-digit",
-              }),
-            )
-          }
-        >
-          <RefreshCw size={15} />
-          Generate weekly brief
-        </button>
-        {generated && (
-          <p className="good-text" role="status">
-            Regenerated at {generated} · current records
-          </p>
-        )}
         <button className="button" onClick={copy}>
           <Copy size={15} />
           {copyState || "Copy briefing text"}

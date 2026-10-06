@@ -32,7 +32,9 @@ test("workspaces and working dialogs have no WCAG A/AA violations detected by ax
     ).violations,
   ).toEqual([]);
   await page.keyboard.press("Escape");
-  await expect(page.getByRole("dialog")).toHaveCount(0);
+  await expect(
+    page.getByRole("region", { name: "Record inspector", exact: true }),
+  ).toHaveCount(0);
   await page
     .getByRole("button", { name: "Search & commands", exact: true })
     .click();

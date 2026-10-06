@@ -110,3 +110,80 @@ describe("connected operator workspaces", () => {
     expect(useOpsStore.getState().data.applicants[4].stage).toBe("Offer");
   });
 });
+
+describe("CohortOps interaction refinements", () => {
+  it("removes generation controls and recomputes the explicitly live brief", () => {
+    useOpsStore.getState().setView("brief");
+    render(<Workspace />);
+    expect(
+      screen.getByRole("heading", { name: "Current Operations Brief" }),
+    ).toBeInTheDocument();
+    expect(
+      screen.queryByRole("button", { name: /Generate/ }),
+    ).not.toBeInTheDocument();
+    expect(
+      screen.getByRole("button", { name: "Copy briefing text" }),
+    ).toBeInTheDocument();
+    fireEvent.keyDown(window, { key: "k", ctrlKey: true });
+    fireEvent.change(screen.getByRole("combobox"), {
+      target: { value: "current operations brief" },
+    });
+    expect(
+      screen.getByRole("option", { name: /Open current operations brief/ }),
+    ).toBeInTheDocument();
+  });
+  it("clears reviewer and stage filters through a real command while preserving board representation", () => {
+    useOpsStore.getState().setView("admissions");
+    render(<Workspace />);
+    fireEvent.click(screen.getByRole("button", { name: "Board view" }));
+    fireEvent.change(screen.getByLabelText("Filter reviewer"), {
+      target: { value: "Priya Shah" },
+    });
+    fireEvent.click(screen.getByRole("button", { name: /Initial screen 4/ }));
+    fireEvent.keyDown(window, { key: "k", ctrlKey: true });
+    const input = screen.getByRole("combobox");
+    fireEvent.change(input, { target: { value: "Clear active filters" } });
+    fireEvent.keyDown(input, { key: "Enter" });
+    expect(screen.getByLabelText("Filter reviewer")).toHaveValue("");
+    expect(screen.getByRole("button", { name: "Board view" })).toHaveAttribute(
+      "aria-pressed",
+      "true",
+    );
+    expect(document.querySelectorAll(".admissions-board>section")).toHaveLength(
+      6,
+    );
+  });
+  it("direct board moves reset ageing, but offer moves wait for reviewer confirmation", () => {
+    useOpsStore.getState().setView("admissions");
+    render(<Workspace />);
+    fireEvent.click(screen.getByRole("button", { name: "Board view" }));
+    fireEvent.change(screen.getByLabelText("Move Amara Okafor to stage"), {
+      target: { value: "Interview" },
+    });
+    expect(useOpsStore.getState().data.applicants[4].stage).toBe("Interview");
+    fireEvent.change(screen.getByLabelText("Move Amara Okafor to stage"), {
+      target: { value: "Offer" },
+    });
+    expect(useOpsStore.getState().data.applicants[4].stage).toBe("Interview");
+    fireEvent.click(
+      screen.getByRole("button", { name: "Confirm reviewer decision" }),
+    );
+    expect(useOpsStore.getState().data.applicants[4].stage).toBe("Offer");
+  });
+  it("groups audited time simulation and confirmed reset inside Demo controls", () => {
+    render(<Workspace />);
+    expect(
+      screen.queryByRole("button", { name: "Advance 3 days" }),
+    ).not.toBeInTheDocument();
+    fireEvent.click(screen.getByRole("button", { name: "Demo controls" }));
+    fireEvent.click(screen.getByRole("button", { name: "Advance 3 days" }));
+    expect(useOpsStore.getState().data.now).toBe("2027-01-14T09:00:00.000Z");
+    expect(useOpsStore.getState().data.audit[0].action).toBe(
+      "Operational clock advanced by 3 days",
+    );
+    fireEvent.click(screen.getByRole("button", { name: "Reset demo state" }));
+    expect(useOpsStore.getState().data.now).toBe("2027-01-14T09:00:00.000Z");
+    fireEvent.click(screen.getByRole("button", { name: "Reset demo data" }));
+    expect(useOpsStore.getState().data.now).toBe("2027-01-11T09:00:00.000Z");
+  });
+});

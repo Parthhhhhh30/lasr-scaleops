@@ -10,9 +10,9 @@ This independent prototype demonstrates relevance to programme administration, a
 | Surface | Operator question | Useful actions |
 | --- | --- | --- |
 | Cohort Control | What requires attention now? | Filter lifecycle/category, inspect a record, complete owned work, resolve booking overlap, acknowledge risk |
-| Admissions Flow | Where are applications waiting? | Search, filter reviewer/stage, sort by age/name, switch board/table, select batches, move stage, record feedback |
+| Admissions Flow | Where are applications waiting? | Search, filter reviewer/stage, sort by age/name, switch board/table, select batches, move stage in the table/inspector or directly on a board ticket, record feedback |
 | Participant Ops | Who is ready, and who needs support? | Filter checklist readiness, complete requirements, inspect allocations, handle support requests |
-| Operations Brief | What should we cover in the check-in? | Trace problems to records, inspect recent changes, regenerate/copy current memo |
+| Operations Brief | What should we cover in the check-in? | Trace problems to records, inspect recent changes, open/copy the live current memo |
 
 ## Behavioral commitments
 
@@ -22,8 +22,14 @@ Offer and acceptance changes record reviewer decisions; they do not decide admis
 
 ## Scope choices
 
-V1 includes three cohorts, stage board/table, contextual side inspector, local persistence, audit notes, reminder drafts and sensitive-case confirmation. It intentionally avoids hosted infrastructure, generative model calls and charts that do not support a decision. Participant creation from acceptance, dynamic room capacity checking, drag-and-drop booking, alumni management and communications delivery are future extensions. The lifecycle controls the queue; later stages have useful empty states rather than invented activity.
+V1 includes three cohorts, stage board/table, responsive split-view inspector, local persistence, audit notes, reminder drafts and sensitive-case confirmation. It intentionally avoids hosted infrastructure, generative model calls and charts that do not support a decision. Participant creation from acceptance, dynamic room capacity checking, drag-and-drop booking, alumni management and communications delivery are future extensions. The lifecycle controls the queue; later stages have useful empty states rather than invented activity.
 
 ## Success criteria
 
 A reviewer can demonstrate a complete action → derived result → audit trail journey in a few minutes. Owners and deterministic reasons are visible. The prototype is explainable without infrastructure expertise. No secrets or external accounts are needed to run it.
+
+## Focused interaction refinement
+
+The display name is CohortOps, an independent prototype with no LASR/Arcadia affiliation. Cohort Control opens with a cohesive compact status rail, not a grid of metrics. A selected record stays connected to a 440px desktop inspector through a quiet background and border indicator; the workspace remains interactive. Below 1280px a modal drawer avoids squeezed working surfaces.
+
+The Current Operations Brief is always derived from current state, with source transparency and copy export. There is no pretend generation action. Demo controls group the synthetic clock, audited three-day advance and confirmed reset apart from normal programme work. Board selectors enable direct keyboard-accessible coordination stage moves; Offer and Accepted still record an already-made human decision. Rules, synthetic data, persistence and audit remain unchanged.

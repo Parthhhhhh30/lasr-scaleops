@@ -14,7 +14,8 @@ export function CommandMenu({
   const s = useOpsStore(),
     [query, setQuery] = useState(""),
     [index, setIndex] = useState(0),
-    list = useRef<HTMLDivElement>(null);
+    list = useRef<HTMLDivElement>(null),
+    executionFocus = useRef<"workspace" | "record" | null>(null);
   const go = (view: View, filter: Filter = "all") => {
     s.setView(view);
     s.setFilter(filter);
@@ -64,8 +65,8 @@ export function CommandMenu({
     },
     {
       id: "brief",
-      label: "Generate weekly brief",
-      detail: "Current state · deterministic",
+      label: "Open current operations brief",
+      detail: "Live state · deterministic rules",
       run: () => go("brief"),
     },
     {
@@ -110,7 +111,11 @@ export function CommandMenu({
   const execute = (i: number) => {
     const c = results[i];
     if (!c) return;
+    executionFocus.current =
+      c.id.includes("-p") || c.id.includes("-a") ? "record" : "workspace";
     onOpenChange(false);
+    setQuery("");
+    setIndex(0);
     c.run();
   };
   return (
@@ -124,7 +129,26 @@ export function CommandMenu({
     >
       <Dialog.Portal>
         <Dialog.Overlay className="modal-overlay" />
-        <Dialog.Content {...focusHandlers} className="command-dialog">
+        <Dialog.Content
+          {...focusHandlers}
+          onCloseAutoFocus={(event) => {
+            const target = executionFocus.current;
+            executionFocus.current = null;
+            if (!target) {
+              focusHandlers.onCloseAutoFocus(event);
+              return;
+            }
+            event.preventDefault();
+            document
+              .querySelector<HTMLElement>(
+                target === "record"
+                  ? '.inspector [aria-label="Close inspector"]'
+                  : "#workspace-surface",
+              )
+              ?.focus();
+          }}
+          className="command-dialog"
+        >
           <Dialog.Title className="sr-only">Search and commands</Dialog.Title>
           <Dialog.Description className="sr-only">
             Search current-cohort records or choose an operational command. Use

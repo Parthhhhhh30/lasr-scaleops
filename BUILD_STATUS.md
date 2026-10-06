@@ -10,10 +10,11 @@
 - Deterministic OpsEngine, Zod-validated repository boundary and persistent Zustand transactions.
 - Contextual record inspector: owner assignment, checklist/task completion, stage changes, room movement, sensitive support confirmation, risk acknowledgement, notes and unsent reminder drafts.
 - Real command palette, Ctrl+K / Cmd+K and search shortcuts, keyboard focus restoration, responsive navigation/tables, reduced motion, demo reset and time simulation.
-- All ten required documentation files, four screenshots and GitHub Actions quality-gate workflow.
+- All ten required documentation files, five refreshed screenshots and GitHub Actions quality-gate workflow.
 - Cloud environment install_script and start_skill saved in the review draft. Original package-manager network policy retained; no credentials required.
 
 ## Current
+- CohortOps refinement complete: desktop split inspector, compact status rail, live brief, accessible board moves, grouped demo controls, command focus and readable supporting text. Domain rules, dataset schemas, persistence and audit behavior are retained; filter reset notification is ephemeral UI state.
 - V1 implemented and verified in this cloud machine. Development and production startup validated with Node 24 and installed system Chromium.
 - Setup/startup draft saved; publication is user-owned and has not been performed. Restoration in a newly published task has not been tested.
 
@@ -24,19 +25,19 @@
 | Clean `npm ci` from lockfile | Passed |
 | ESLint | Passed, no lint warnings/errors |
 | TypeScript | Passed |
-| Vitest | 24 passed: 8 domain, 10 state/repository, 6 UI/integration |
+| Vitest | 28 passed: 8 domain, 10 state/repository, 10 UI/integration |
 | Next.js production build | Passed; application and icon prerendered |
-| Playwright production journeys | 5 passed, none skipped |
-| Axe WCAG A/AA scan | No detected violations in four workspaces, participant inspector and command dialog |
-| Keyboard focus | Command input receives focus; Escape returns focus to opener |
+| Playwright production journeys | 9 passed, none skipped |
+| Axe WCAG A/AA scan | No detected violations in four workspaces, desktop split inspector, tablet drawer, command dialog and demo controls |
+| Keyboard focus | Commands focus their destination; Escape restores focus; moved board controls retain keyboard focus |
 | Development startup | Hydration and hot-reload connection verified; loopback development origin explicitly configured |
-| Responsive | Mobile journey passes; tablet has no document-width overflow |
+| Responsive | Mobile and tablet journeys pass; desktop split view preserves queue scroll; no document-width overflow |
 | Repository whitespace check | Passed |
 
 Tests found and fixed the strict 72-hour threshold, mobile command-button naming, secondary-text contrast and dialog focus restoration. Browser test selectors were corrected to distinguish audit text from transient notification text. The development origin correction follows the installed Next.js documentation. These outcomes are current-instance checks, not claims of deployment or cross-browser certification.
 
 ## Remaining
-- No required V1 implementation or local validation is outstanding.
+- No required refinement implementation or local validation is outstanding. Five production screenshots refreshed; screenshot session recorded no browser errors and four fully visible queue rows at 1366 × 768.
 - Optional external publication/hosting; no external action is needed to run the local prototype.
 - Production roadmap: server-backed repository, authorization, protected documents, concurrent transactions, communication review/delivery tracking and calendar integration.
 - Broader assistive-technology and Firefox/WebKit validation before production use.

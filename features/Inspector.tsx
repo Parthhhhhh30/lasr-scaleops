@@ -1,3 +1,7 @@
+import {
+  SPLIT_INSPECTOR_QUERY,
+  useMediaQuery,
+} from "@/components/useMediaQuery";
 import { useDialogFocus } from "@/components/useDialogFocus";
 import { useState } from "react";
 import * as Dialog from "@radix-ui/react-dialog";
@@ -19,16 +23,25 @@ import { ConfirmDialog } from "@/components/dialogs";
 export function Inspector() {
   const focusHandlers = useDialogFocus();
   const s = useOpsStore();
+  const desktop = useMediaQuery(SPLIT_INSPECTOR_QUERY);
   return (
     <Dialog.Root
+      modal={!desktop}
       open={!!s.selection}
       onOpenChange={(open) => {
         if (!open) s.select(null);
       }}
     >
       <Dialog.Portal>
-        <Dialog.Overlay className="inspector-overlay" />
-        <Dialog.Content {...focusHandlers} className="inspector">
+        {!desktop && <Dialog.Overlay className="inspector-overlay" />}
+        <Dialog.Content
+          {...focusHandlers}
+          className={`inspector ${desktop ? "split-inspector" : "drawer-inspector"}`}
+          role={desktop ? "region" : "dialog"}
+          onInteractOutside={(event) => {
+            if (desktop) event.preventDefault();
+          }}
+        >
           <Dialog.Title className="sr-only">Record inspector</Dialog.Title>
           <Dialog.Description className="sr-only">
             Review this record, update owned actions, and read the audit
@@ -481,7 +494,7 @@ function InspectorRecord({ selection }: { selection: Selection }) {
           if (!open) setConfirmStage(null);
         }}
         title="Record the reviewer decision"
-        description="Confirm the responsible reviewer has made this admissions decision. ScaleOps records the stage; it does not select candidates."
+        description="Confirm the responsible reviewer has made this admissions decision. CohortOps records the stage; it does not select candidates."
         confirmLabel="Confirm reviewer decision"
         onConfirm={() => {
           if (a && confirmStage) s.moveApplicant(a.id, confirmStage);

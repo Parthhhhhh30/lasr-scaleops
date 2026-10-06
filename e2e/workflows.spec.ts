@@ -57,7 +57,7 @@ test("operator resolves room overlap, support and reviewer ageing with audited a
   await page.getByRole("combobox").fill("applications waiting");
   await page.keyboard.press("Enter");
   await expect(
-    page.getByRole("heading", { name: "Admissions Flow." }),
+    page.getByRole("heading", { name: "Admissions Flow" }),
   ).toBeVisible();
   const row = page.getByRole("row").filter({ hasText: "Amara Okafor" });
   await row.getByRole("button", { name: /Amara Okafor Evaluation/ }).click();
@@ -110,12 +110,20 @@ test("cohort, board, sensitive escalation and reset are real interactions", asyn
     page.getByRole("button", { name: "Resolve support request" }),
   ).toBeEnabled();
   await page.getByRole("button", { name: "Close inspector" }).click();
-  await page.getByRole("button", { name: "Simulate +3 days" }).click();
-  await page.getByRole("button", { name: "Reset demonstration" }).click();
+  await page
+    .getByRole("button", { name: "Demo controls", exact: true })
+    .click();
+  await page
+    .getByRole("button", { name: "Advance 3 days", exact: true })
+    .click();
+  await expect(page.locator(".demo-current-date")).toContainText("14 Jan 2027");
+  await page
+    .getByRole("button", { name: "Reset demo state", exact: true })
+    .click();
   await page
     .getByRole("button", { name: "Reset demo data", exact: true })
     .click();
-  await expect(page.getByText("Demo clock · 11 Jan 2027")).toBeVisible();
+  await expect(page.getByText("Demo clock · 11 Jan")).toBeVisible();
 });
 test("mobile navigation and command palette remain usable", async ({
   page,
@@ -127,13 +135,13 @@ test("mobile navigation and command palette remain usable", async ({
     .getByRole("button", { name: "Participant Ops", exact: true })
     .click();
   await expect(
-    page.getByRole("heading", { name: "Participant Ops." }),
+    page.getByRole("heading", { name: "Participant Ops" }),
   ).toBeVisible();
   await page.getByRole("button", { name: "Search & commands" }).click();
-  await page.getByRole("combobox").fill("weekly brief");
+  await page.getByRole("combobox").fill("current operations brief");
   await page.keyboard.press("Enter");
   await expect(
-    page.getByRole("heading", { name: "Operations Brief." }),
+    page.getByRole("heading", { name: "Current Operations Brief" }),
   ).toBeVisible();
   expect(
     await page.evaluate(

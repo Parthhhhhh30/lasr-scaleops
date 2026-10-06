@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import {
   ArrowUpDown,
   Columns3,
@@ -21,7 +21,44 @@ export function Admissions() {
     [owner, setOwner] = useState(""),
     [selected, setSelected] = useState<string[]>([]),
     [nextStage, setNextStage] = useState<ApplicationStage>("Initial screen"),
-    [confirm, setConfirm] = useState(false);
+    [confirm, setConfirm] = useState(false),
+    [boardMove, setBoardMove] = useState<{
+      id: string;
+      name: string;
+      stage: ApplicationStage;
+    } | null>(null);
+  const movedTicket = useRef<string | null>(null);
+  useLayoutEffect(() => {
+    if (!movedTicket.current) return;
+    const target = Array.from(
+      document.querySelectorAll<HTMLSelectElement>(".ticket-move select"),
+    ).find(
+      (element) => element.dataset.focusKey === `board-${movedTicket.current}`,
+    );
+    movedTicket.current = null;
+    if (target) {
+      target.scrollIntoView({ block: "nearest", inline: "nearest" });
+      target.focus({ preventScroll: true });
+    } else
+      document
+        .querySelector<HTMLElement>("#workspace-surface")
+        ?.focus({ preventScroll: true });
+  }, [s.data.applicants]);
+  useEffect(
+    () =>
+      useOpsStore.subscribe((state, previous) => {
+        if (state.filterResetVersion !== previous.filterResetVersion) {
+          setStage("");
+          setOwner("");
+          setSelected([]);
+        }
+      }),
+    [],
+  );
+  const moveTicket = (id: string, destination: ApplicationStage) => {
+    movedTicket.current = id;
+    s.moveApplicant(id, destination);
+  };
   const all = s.data.applicants.filter((a) => a.cohortId === s.cohortId);
   const filtered = all
     .filter(
@@ -182,7 +219,14 @@ export function Admissions() {
             </thead>
             <tbody>
               {filtered.map((a) => (
-                <tr key={a.id}>
+                <tr
+                  key={a.id}
+                  className={
+                    s.selection?.kind === "applicant" && s.selection.id === a.id
+                      ? "record-selected"
+                      : ""
+                  }
+                >
                   <td>
                     <input
                       type="checkbox"
@@ -194,6 +238,10 @@ export function Admissions() {
                   <td>
                     <button
                       className="person-cell"
+                      aria-expanded={
+                        s.selection?.kind === "applicant" &&
+                        s.selection.id === a.id
+                      }
                       onClick={() => s.select({ kind: "applicant", id: a.id })}
                     >
                       <Avatar name={a.name} />
@@ -263,16 +311,26 @@ export function Admissions() {
                 {filtered
                   .filter((a) => a.stage === st)
                   .map((a) => (
-                    <button
-                      className="applicant-ticket"
+                    <article
+                      className={`applicant-ticket ${s.selection?.kind === "applicant" && s.selection.id === a.id ? "record-selected" : ""}`}
                       key={a.id}
-                      onClick={() => s.select({ kind: "applicant", id: a.id })}
                     >
-                      <span>
-                        <Avatar name={a.name} />
-                        <strong>{a.name}</strong>
-                      </span>
-                      <p>{a.focus}</p>
+                      <button
+                        className="ticket-open"
+                        aria-pressed={
+                          s.selection?.kind === "applicant" &&
+                          s.selection.id === a.id
+                        }
+                        onClick={() =>
+                          s.select({ kind: "applicant", id: a.id })
+                        }
+                      >
+                        <span>
+                          <Avatar name={a.name} />
+                          <strong>{a.name}</strong>
+                        </span>
+                        <p>{a.focus}</p>
+                      </button>
                       <footer>
                         <span>{a.owner.split(" ")[0]}</span>
                         <span
@@ -291,7 +349,31 @@ export function Admissions() {
                             Reviewer feedback missing
                           </small>
                         )}
-                    </button>
+                      <label className="ticket-move">
+                        Move to
+                        <select
+                          aria-label={`Move ${a.name} to stage`}
+                          data-focus-key={`board-${a.id}`}
+                          value={a.stage}
+                          onChange={(e) => {
+                            const destination = e.target
+                              .value as ApplicationStage;
+                            if (destination === a.stage) return;
+                            if (["Offer", "Accepted"].includes(destination))
+                              setBoardMove({
+                                id: a.id,
+                                name: a.name,
+                                stage: destination,
+                              });
+                            else moveTicket(a.id, destination);
+                          }}
+                        >
+                          {APPLICATION_STAGES.map((destination) => (
+                            <option key={destination}>{destination}</option>
+                          ))}
+                        </select>
+                      </label>
+                    </article>
                   ))}
                 {!filtered.some((a) => a.stage === st) && (
                   <p className="board-empty">No applications here</p>
@@ -312,9 +394,21 @@ export function Admissions() {
         open={confirm}
         onOpenChange={setConfirm}
         title="Record a human admissions decision"
-        description={`Moving ${ids.length} applications to ${nextStage} records a decision already made by the responsible reviewers. ScaleOps does not assess or select candidates.`}
+        description={`Moving ${ids.length} applications to ${nextStage} records a decision already made by the responsible reviewers. CohortOps does not assess or select candidates.`}
         confirmLabel="Confirm reviewer decision"
         onConfirm={move}
+      />
+      <ConfirmDialog
+        open={!!boardMove}
+        onOpenChange={(open) => {
+          if (!open) setBoardMove(null);
+        }}
+        title="Record a human admissions decision"
+        description={`Moving ${boardMove?.name ?? "this applicant"} to ${boardMove?.stage ?? "the next stage"} records a decision already made by the responsible reviewers. CohortOps does not assess or select candidates.`}
+        confirmLabel="Confirm reviewer decision"
+        onConfirm={() => {
+          if (boardMove) moveTicket(boardMove.id, boardMove.stage);
+        }}
       />
     </>
   );

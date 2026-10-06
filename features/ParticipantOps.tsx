@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ArrowUpRight, CheckCheck, ShieldCheck } from "lucide-react";
 import { useOpsStore } from "@/store/useOpsStore";
 import {
@@ -19,6 +19,14 @@ export function ParticipantOps() {
   const s = useOpsStore(),
     [tab, setTab] = useState<"readiness" | "support">("readiness"),
     [status, setStatus] = useState("all");
+  useEffect(
+    () =>
+      useOpsStore.subscribe((state, previous) => {
+        if (state.filterResetVersion !== previous.filterResetVersion)
+          setStatus("all");
+      }),
+    [],
+  );
   const m = cohortMetrics(s.data, s.cohortId);
   const participants = m.participants.filter(
     (p) =>
@@ -42,7 +50,7 @@ export function ParticipantOps() {
     <>
       <div className="participant-summary">
         <div>
-          <span className="eyebrow">READINESS IS A WORKFLOW</span>
+          <span className="eyebrow">PARTICIPANT READINESS</span>
           <h2>
             {m.ready}
             <span> / {m.participants.length}</span>{" "}
@@ -118,10 +126,22 @@ export function ParticipantOps() {
             </thead>
             <tbody>
               {participants.map((p) => (
-                <tr key={p.id}>
+                <tr
+                  key={p.id}
+                  className={
+                    s.selection?.kind === "participant" &&
+                    s.selection.id === p.id
+                      ? "record-selected"
+                      : ""
+                  }
+                >
                   <td>
                     <button
                       className="person-cell"
+                      aria-expanded={
+                        s.selection?.kind === "participant" &&
+                        s.selection.id === p.id
+                      }
                       onClick={() =>
                         s.select({ kind: "participant", id: p.id })
                       }
@@ -182,7 +202,10 @@ export function ParticipantOps() {
           {support.map((r) => (
             <button
               key={r.id}
-              className="support-row"
+              className={`support-row ${s.selection?.kind === "support" && s.selection.id === r.id ? "record-selected" : ""}`}
+              aria-pressed={
+                s.selection?.kind === "support" && s.selection.id === r.id
+              }
               onClick={() => s.select({ kind: "support", id: r.id })}
             >
               <span className={`queue-marker ${r.resolved ? "low" : "high"}`} />

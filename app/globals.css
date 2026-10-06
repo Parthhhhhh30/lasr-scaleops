@@ -131,7 +131,7 @@ strong {
 .brand small {
   display: block;
   font-family: var(--font-body);
-  font-size: 8px;
+  font-size: 10px;
   font-weight: 550;
   letter-spacing: 1.25px;
   color: #596658;
@@ -160,7 +160,7 @@ strong {
   line-height: 1;
 }
 .workspace-label {
-  font-size: 9px;
+  font-size: 11px;
   letter-spacing: 1.7px;
   color: #596658;
   display: flex;
@@ -280,7 +280,7 @@ strong {
   font-size: 11px;
 }
 .operator-avatar {
-  font-size: 10px;
+  font-size: 11px;
   border: 1px solid #cbd5c5;
   border-radius: 50%;
   height: 29px;
@@ -290,7 +290,7 @@ strong {
 }
 .operator small {
   display: block;
-  font-size: 8px;
+  font-size: 10px;
   color: #5b6654;
   margin-top: 2px;
 }
@@ -328,7 +328,7 @@ strong {
   display: flex;
   gap: 6px;
   align-items: center;
-  font-size: 10px;
+  font-size: 11px;
   color: #5b6655;
 }
 .demo-label span {
@@ -345,11 +345,11 @@ strong {
   border: 1px solid #e0e6db;
   border-radius: 4px;
   padding: 6px 8px;
-  font-size: 10px;
+  font-size: 11px;
   color: #5a6653;
 }
 .command-trigger kbd {
-  font-size: 9px;
+  font-size: 11px;
   margin-left: 20px;
 }
 kbd {
@@ -358,7 +358,7 @@ kbd {
   border: 1px solid #dce2d6;
   border-radius: 3px;
   padding: 1px 4px;
-  font-size: 10px;
+  font-size: 11px;
   white-space: nowrap;
 }
 main {
@@ -374,7 +374,7 @@ main {
 }
 .eyebrow {
   display: block;
-  font-size: 9px;
+  font-size: 11px;
   font-weight: 550;
   letter-spacing: 1.7px;
   color: #5d6653;
@@ -398,11 +398,11 @@ main {
   display: flex;
   align-items: center;
   gap: 5px;
-  font-size: 10px;
+  font-size: 11px;
   color: #5b6653;
 }
 .clock-control button {
-  font-size: 10px;
+  font-size: 11px;
   color: #58674e;
   display: inline-flex;
   gap: 5px;
@@ -426,7 +426,7 @@ main {
   flex: 1;
 }
 .cohort-title .eyebrow {
-  font-size: 8px;
+  font-size: 10px;
   letter-spacing: 1.5px;
 }
 .cohort-title h2 {
@@ -438,7 +438,7 @@ main {
 }
 .cohort-title h2 .tag {
   font-family: var(--font-body);
-  font-size: 9px;
+  font-size: 11px;
   letter-spacing: 0;
   font-weight: 400;
 }
@@ -446,7 +446,7 @@ main {
   display: flex;
   align-items: center;
   gap: 6px;
-  font-size: 10px;
+  font-size: 11px;
   margin-top: 6px;
 }
 .cohort-title p > span {
@@ -458,7 +458,7 @@ main {
   align-items: center;
   gap: 15px;
   margin-top: 17px;
-  font-size: 10px;
+  font-size: 11px;
   color: #576751;
 }
 .cohort-meta span {
@@ -491,7 +491,7 @@ main {
   font-size: 11px;
 }
 .readiness-summary p {
-  font-size: 10px;
+  font-size: 11px;
   margin-top: 2px;
   white-space: nowrap;
 }
@@ -511,7 +511,7 @@ main {
   max-width: 210px;
 }
 .launch-status .eyebrow {
-  font-size: 8px;
+  font-size: 10px;
 }
 .launch-status > strong {
   display: flex;
@@ -522,7 +522,7 @@ main {
   margin-top: 7px;
 }
 .launch-status p {
-  font-size: 10px;
+  font-size: 11px;
   margin-top: 6px;
   white-space: nowrap;
 }
@@ -530,7 +530,7 @@ main {
   display: flex;
   align-items: center;
   gap: 7px;
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 500;
   margin-top: 12px;
   color: var(--ink);
@@ -584,12 +584,12 @@ main {
   box-shadow: inset 0 -2px #5c7950;
 }
 .stage-number {
-  font-size: 8px;
+  font-size: 10px;
   font-variant-numeric: tabular-nums;
   color: #5b6650;
 }
 .stage-current {
-  font-size: 6px;
+  font-size: 10px;
   color: var(--accent);
   letter-spacing: 0.8px;
 }
@@ -606,7 +606,7 @@ main {
   margin-bottom: 18px;
 }
 .section-head .eyebrow {
-  font-size: 8px;
+  font-size: 10px;
   letter-spacing: 1.4px;
   margin-bottom: 5px;
 }
@@ -614,7 +614,7 @@ main {
   font-size: 18px;
 }
 .count-label {
-  font-size: 10px;
+  font-size: 11px;
   color: #5d6651;
 }
 .queue-tools {
@@ -629,7 +629,7 @@ main {
   overflow: auto;
 }
 .filter-tabs button {
-  font-size: 10px;
+  font-size: 11px;
   color: #5c6650;
   padding: 3px 0 8px;
   white-space: nowrap;
@@ -671,14 +671,14 @@ main {
   box-shadow: 0 0 0 2px #dde7d4;
 }
 .search-field kbd {
-  font-size: 8px;
+  font-size: 10px;
   background: none;
   border-color: #e1e6da;
 }
 .queue-column-labels {
   display: grid;
   grid-template-columns: 1fr 95px 87px;
-  font-size: 8px;
+  font-size: 10px;
   letter-spacing: 1px;
   color: #5c664f;
   padding: 13px 28px 10px 18px;
@@ -729,7 +729,7 @@ main {
 }
 .queue-record small {
   display: block;
-  font-size: 10px;
+  font-size: 11px;
   color: #5b664f;
   margin-top: 4px;
   white-space: nowrap;
@@ -737,11 +737,11 @@ main {
   text-overflow: ellipsis;
 }
 .queue-owner {
-  font-size: 10px;
+  font-size: 11px;
   color: #5b664f;
 }
 .priority-label {
-  font-size: 9px;
+  font-size: 11px;
   text-transform: capitalize;
   color: #5c6749;
 }
@@ -763,7 +763,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 9px;
+  font-size: 11px;
   color: #5c6650;
   padding-top: 14px;
 }
@@ -771,7 +771,7 @@ main {
   display: flex;
   gap: 5px;
   align-items: center;
-  font-size: 9px;
+  font-size: 11px;
   color: #59674c;
 }
 .context-column {
@@ -823,14 +823,14 @@ main {
   flex: 1;
 }
 .timeline small {
-  font-size: 9px;
+  font-size: 11px;
   color: #5a674e;
 }
 .timeline strong {
   font-size: 11px;
 }
 .timeline button > span > span {
-  font-size: 9px;
+  font-size: 11px;
   color: #5d6650;
 }
 .timeline button > svg {
@@ -852,7 +852,7 @@ main {
   display: flex;
   gap: 7px;
   align-items: center;
-  font-size: 10px;
+  font-size: 11px;
   color: #8f542c;
   background: #f7efe4;
   padding: 9px 10px;
@@ -877,14 +877,14 @@ main {
   gap: 4px;
 }
 .event-line small {
-  font-size: 9px;
+  font-size: 11px;
   color: #5b664e;
 }
 .event-line strong {
   font-size: 11px;
 }
 .event-line span > span {
-  font-size: 9px;
+  font-size: 11px;
   color: #5e6653;
 }
 .event-line > svg {
@@ -901,7 +901,7 @@ main {
   position: relative;
 }
 .editorial-note > span:first-child {
-  font-size: 7px;
+  font-size: 10px;
   letter-spacing: 1.6px;
   color: #58684b;
 }
@@ -917,7 +917,7 @@ main {
   position: absolute;
   right: 13px;
   bottom: 12px;
-  font-size: 8px;
+  font-size: 10px;
   color: #58674b;
 }
 .workspace-footer {
@@ -927,12 +927,12 @@ main {
   margin-top: 33px;
   border-top: 1px solid #dce4d5;
   padding: 18px 0 21px;
-  font-size: 8px;
+  font-size: 10px;
   color: #5c6651;
   gap: 15px;
 }
 .workspace-footer > span:last-child {
-  font-size: 7px;
+  font-size: 10px;
   letter-spacing: 1px;
   white-space: nowrap;
 }
@@ -944,7 +944,7 @@ main {
 .tag {
   display: inline-flex;
   align-items: center;
-  font-size: 10px;
+  font-size: 11px;
   line-height: 1.4;
   padding: 3px 7px;
   border-radius: 3px;
@@ -1068,7 +1068,7 @@ main {
   align-items: center;
   gap: 7px;
   color: #5c674d;
-  font-size: 10px;
+  font-size: 11px;
 }
 .stage-strip {
   display: flex;
@@ -1088,7 +1088,7 @@ main {
   justify-content: space-between;
   align-items: center;
   gap: 7px;
-  font-size: 10px;
+  font-size: 11px;
   color: #59674c;
 }
 .stage-strip button span {
@@ -1116,7 +1116,7 @@ main {
   align-items: center;
   gap: 7px;
   color: #5b674d;
-  font-size: 10px;
+  font-size: 11px;
 }
 .select-label select {
   border: 1px solid #dce3d3;
@@ -1124,7 +1124,7 @@ main {
   padding: 7px 8px;
   border-radius: 4px;
   color: #55684a;
-  font-size: 10px;
+  font-size: 11px;
 }
 .view-toggle {
   display: flex;
@@ -1159,7 +1159,7 @@ main {
   background: #f0f4eb;
 }
 .operating-table th {
-  font-size: 8px;
+  font-size: 10px;
   color: #59684a;
   font-weight: 500;
   letter-spacing: 0.6px;
@@ -1192,7 +1192,7 @@ main {
 }
 .person-cell small {
   display: block;
-  font-size: 10px;
+  font-size: 11px;
   color: #59674a;
   margin-top: 4px;
 }
@@ -1205,13 +1205,13 @@ main {
   background: #e9ede2;
   border: 1px solid #dbe3d1;
   border-radius: 50%;
-  font-size: 9px;
+  font-size: 11px;
   color: #566845;
   flex-shrink: 0;
 }
 .stage-label {
   color: #546942;
-  font-size: 10px;
+  font-size: 11px;
 }
 .row-arrow {
   color: #526a45;
@@ -1221,7 +1221,7 @@ main {
   justify-content: space-between;
   gap: 15px;
   color: #5b674a;
-  font-size: 9px;
+  font-size: 11px;
   margin-top: 15px;
 }
 .batch-bar {
@@ -1245,11 +1245,11 @@ main {
   background: #fafcf6;
   border-radius: 3px;
   padding: 5px;
-  font-size: 10px;
+  font-size: 11px;
 }
 .batch-bar > button:last-child {
   margin-left: auto;
-  font-size: 10px;
+  font-size: 11px;
 }
 .admissions-board {
   display: flex;
@@ -1277,7 +1277,7 @@ main {
   font-size: 11px;
 }
 .admissions-board header > span {
-  font-size: 10px;
+  font-size: 11px;
   color: #586848;
 }
 .applicant-ticket {
@@ -1299,21 +1299,21 @@ main {
 .applicant-ticket .avatar {
   width: 25px;
   height: 25px;
-  font-size: 8px;
+  font-size: 10px;
 }
 .applicant-ticket p {
-  font-size: 10px;
+  font-size: 11px;
   margin: 10px 0;
 }
 .applicant-ticket footer {
   display: flex;
   justify-content: space-between;
-  font-size: 9px;
+  font-size: 11px;
   color: #5b674a;
 }
 .applicant-ticket > small {
   display: block;
-  font-size: 9px;
+  font-size: 11px;
   margin-top: 7px;
 }
 .applicant-ticket:hover {
@@ -1321,7 +1321,7 @@ main {
 }
 .board-empty {
   padding: 10px 0;
-  font-size: 10px;
+  font-size: 11px;
   color: #596848;
 }
 .participant-summary h2 {
@@ -1341,7 +1341,7 @@ main {
   font-weight: 400;
 }
 .participant-summary > p {
-  font-size: 10px;
+  font-size: 11px;
   display: flex;
   align-items: center;
   gap: 9px;
@@ -1366,14 +1366,14 @@ main {
   color: var(--ink);
 }
 .participant-tabs button span {
-  font-size: 9px;
+  font-size: 11px;
   background: #e8eee0;
   color: #566944;
   border-radius: 3px;
   padding: 2px 5px;
 }
 .toolbar-detail {
-  font-size: 9px;
+  font-size: 11px;
   color: #5a674b;
   margin-left: auto;
 }
@@ -1382,13 +1382,13 @@ main {
   padding-right: 14px;
 }
 .cell-title {
-  font-size: 10px;
+  font-size: 11px;
   display: block;
   color: #546941;
 }
 .cell-sub {
   display: block;
-  font-size: 9px;
+  font-size: 11px;
   color: #586847;
   margin-top: 3px;
 }
@@ -1396,7 +1396,7 @@ main {
   display: flex;
   gap: 8px;
   align-items: center;
-  font-size: 10px;
+  font-size: 11px;
   color: #566946;
   min-width: 100px;
 }
@@ -1444,7 +1444,7 @@ main {
 }
 .support-row small {
   display: block;
-  font-size: 10px;
+  font-size: 11px;
   margin-top: 5px;
   color: #566944;
 }
@@ -1468,7 +1468,7 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 10px;
+  font-size: 11px;
   color: #586849;
   border-bottom: 1px solid #dde5d4;
   padding-bottom: 18px;
@@ -1477,7 +1477,7 @@ main {
   padding: 30px 0 24px;
 }
 .brief-issue {
-  font-size: 8px;
+  font-size: 10px;
   letter-spacing: 2px;
   color: var(--accent);
 }
@@ -1518,7 +1518,7 @@ main {
   display: block;
 }
 .brief-verdict span:not(.tag) {
-  font-size: 9px;
+  font-size: 11px;
   color: #576845;
   display: block;
   margin-top: 3px;
@@ -1531,7 +1531,7 @@ main {
   padding: 25px 0;
 }
 .brief-section-number {
-  font-size: 10px;
+  font-size: 11px;
   color: #5b664e;
   padding-top: 2px;
 }
@@ -1565,7 +1565,7 @@ main {
 }
 .brief-action small {
   display: block;
-  font-size: 10px;
+  font-size: 11px;
   color: #586846;
   margin-top: 3px;
 }
@@ -1581,13 +1581,13 @@ main {
   margin-top: 15px;
 }
 .upcoming-box .eyebrow {
-  font-size: 8px;
+  font-size: 10px;
 }
 .upcoming-box p {
   display: flex;
   justify-content: space-between;
   margin-top: 8px;
-  font-size: 10px;
+  font-size: 11px;
 }
 .brief-change {
   display: flex;
@@ -1607,14 +1607,14 @@ main {
 }
 .brief-change small {
   display: block;
-  font-size: 9px;
+  font-size: 11px;
   line-height: 1.7;
   color: #566845;
   margin-top: 3px;
   overflow-wrap: anywhere;
 }
 .brief-paper-footer {
-  font-size: 9px;
+  font-size: 11px;
   color: #576847;
   padding-top: 18px;
   line-height: 1.8;
@@ -1644,7 +1644,7 @@ main {
   padding-top: 17px;
   display: grid;
   gap: 10px;
-  font-size: 10px;
+  font-size: 11px;
   color: #576847;
 }
 .brief-source-list strong {
@@ -1653,7 +1653,7 @@ main {
   margin-bottom: 2px;
 }
 .boundary-note {
-  font-size: 10px;
+  font-size: 11px;
   line-height: 1.8;
   background: #f4f1e5;
   color: #736132;
@@ -1662,7 +1662,7 @@ main {
   margin-top: 17px;
 }
 .brief-sidebar .boundary-note {
-  font-size: 10px;
+  font-size: 11px;
   margin-top: 25px;
   padding: 12px;
   line-height: 1.8;
@@ -1693,7 +1693,7 @@ main {
   align-items: center;
   padding: 17px 26px;
   border-bottom: 1px solid #e0e8d7;
-  font-size: 8px;
+  font-size: 10px;
   letter-spacing: 1.8px;
   color: #556847;
   background: #f2f5ed;
@@ -1706,7 +1706,7 @@ main {
   border-bottom: 1px solid #e2e9da;
 }
 .inspector-identity .eyebrow {
-  font-size: 8px;
+  font-size: 10px;
 }
 .inspector-identity > div {
   display: flex;
@@ -1719,7 +1719,7 @@ main {
   line-height: 1.4;
 }
 .inspector-identity > p {
-  font-size: 10px;
+  font-size: 11px;
   margin-top: 10px;
 }
 .inspector-identity .text-link {
@@ -1736,7 +1736,7 @@ main {
 .inspector-field {
   display: grid;
   gap: 7px;
-  font-size: 10px;
+  font-size: 11px;
   color: #526942;
   margin-bottom: 17px;
 }
@@ -1778,7 +1778,7 @@ main {
   padding: 15px 0;
 }
 .record-facts > span {
-  font-size: 9px;
+  font-size: 11px;
   color: #566842;
 }
 .record-facts strong {
@@ -1807,7 +1807,7 @@ main {
 }
 .checklist label small {
   display: block;
-  font-size: 9px;
+  font-size: 11px;
   color: #566843;
   margin-top: 3px;
   text-transform: capitalize;
@@ -1816,7 +1816,7 @@ main {
   color: #546941;
 }
 .field-help {
-  font-size: 10px;
+  font-size: 11px;
   line-height: 1.8;
   color: #566842;
   margin: 9px 0;
@@ -1834,7 +1834,7 @@ main {
 }
 .inspector-linked small {
   display: block;
-  font-size: 9px;
+  font-size: 11px;
   color: #566843;
   margin-top: 3px;
 }
@@ -1877,13 +1877,13 @@ main {
   line-height: 1.7;
 }
 .audit-list small {
-  font-size: 9px;
+  font-size: 11px;
   color: #556941;
   display: block;
   margin-top: 3px;
 }
 .audit-list p {
-  font-size: 10px;
+  font-size: 11px;
   color: #506b38;
   margin-top: 7px;
   line-height: 1.8;
@@ -1964,7 +1964,7 @@ main {
   color: #566941;
 }
 .command-caption {
-  font-size: 8px;
+  font-size: 10px;
   letter-spacing: 1.4px;
   color: #556944;
   padding: 14px 21px 6px;
@@ -1992,7 +1992,7 @@ main {
   display: block;
 }
 .command-option small {
-  font-size: 10px;
+  font-size: 11px;
   display: block;
   color: #556941;
   margin-top: 3px;
@@ -2006,11 +2006,11 @@ main {
   padding: 11px 20px;
   background: #f7f9f2;
   border-top: 1px solid #e6ebdd;
-  font-size: 9px;
+  font-size: 11px;
   color: #576845;
 }
 .command-dialog kbd {
-  font-size: 9px;
+  font-size: 11px;
   margin-right: 4px;
   background: white;
 }
@@ -2049,12 +2049,12 @@ main {
   display: flex;
   align-items: center;
   gap: 7px;
-  font-size: 10px;
+  font-size: 11px;
   padding: 10px 0;
   color: #4b6b37;
 }
 .active-filter button {
-  font-size: 9px;
+  font-size: 11px;
   text-decoration: underline;
   margin-left: 5px;
 }
@@ -2209,13 +2209,13 @@ main {
     display: none;
   }
   .lifecycle > button {
-    font-size: 10px;
+    font-size: 11px;
     padding-left: 5px;
     padding-right: 5px;
     gap: 4px;
   }
   .stage-number {
-    font-size: 7px;
+    font-size: 10px;
   }
   .brief-layout {
     gap: 22px;
@@ -2284,7 +2284,7 @@ main {
   }
   .cohort-meta {
     gap: 11px;
-    font-size: 9px;
+    font-size: 11px;
   }
   .cohort-title h2 {
     font-size: 23px;
@@ -2296,13 +2296,13 @@ main {
     display: none;
   }
   .launch-status strong {
-    font-size: 10px;
+    font-size: 11px;
   }
   .launch-status p {
-    font-size: 9px;
+    font-size: 11px;
   }
   .launch-status button {
-    font-size: 9px;
+    font-size: 11px;
   }
   .brief-layout {
     grid-template-columns: 1fr;
@@ -2347,7 +2347,7 @@ main {
     margin: 5px 0 0;
   }
   .surface-caption {
-    font-size: 8px;
+    font-size: 10px;
   }
   .toolbar-detail {
     display: none;
@@ -2390,7 +2390,7 @@ main {
     gap: 10px;
   }
   .demo-label {
-    font-size: 9px;
+    font-size: 11px;
   }
   .command-trigger {
     padding: 7px;
@@ -2438,10 +2438,10 @@ main {
     flex-basis: 100%;
   }
   .cohort-title p {
-    font-size: 9px;
+    font-size: 11px;
   }
   .cohort-meta {
-    font-size: 9px;
+    font-size: 11px;
   }
   .readiness-summary {
     border: 0;
@@ -2479,7 +2479,7 @@ main {
     right: -7px;
   }
   .lifecycle > button .stage-number {
-    font-size: 8px;
+    font-size: 10px;
   }
   .lifecycle > button {
     font-size: 11px;
@@ -2502,7 +2502,7 @@ main {
     gap: 15px;
   }
   .filter-tabs button {
-    font-size: 10px;
+    font-size: 11px;
   }
   .queue-tools .search-field {
     max-width: none;
@@ -2526,7 +2526,7 @@ main {
     display: none;
   }
   .timeline strong {
-    font-size: 10px;
+    font-size: 11px;
   }
   .timeline button > svg {
     display: none;
@@ -2536,7 +2536,7 @@ main {
     padding-top: 25px;
   }
   .workspace-footer {
-    font-size: 8px;
+    font-size: 10px;
     line-height: 1.8;
     margin-top: 25px;
   }
@@ -2562,7 +2562,7 @@ main {
     margin-bottom: 4px;
   }
   .table-toolbar .button {
-    font-size: 10px;
+    font-size: 11px;
   }
   .table-toolbar .view-toggle {
     margin-left: auto;
@@ -2570,7 +2570,7 @@ main {
   .batch-bar {
     flex-wrap: wrap;
     gap: 10px;
-    font-size: 10px;
+    font-size: 11px;
   }
   .batch-bar label {
     gap: 5px;
@@ -2594,7 +2594,7 @@ main {
   .participant-summary h2 small {
     display: inline;
     margin-left: 8px;
-    font-size: 10px;
+    font-size: 11px;
   }
   .participant-summary > p {
     max-width: none;
@@ -2614,20 +2614,20 @@ main {
     font-size: 11px;
   }
   .support-row small {
-    font-size: 9px;
+    font-size: 11px;
   }
   .support-row .tag {
-    font-size: 8px;
+    font-size: 10px;
   }
   .brief-paper {
     padding: 19px;
   }
   .brief-masthead .eyebrow {
-    font-size: 7px;
+    font-size: 10px;
     letter-spacing: 1px;
   }
   .brief-masthead > span:last-child {
-    font-size: 9px;
+    font-size: 11px;
   }
   .brief-title h2 {
     font-size: 26px;
@@ -2649,7 +2649,7 @@ main {
     font-size: 13px;
   }
   .brief-section p {
-    font-size: 10px;
+    font-size: 11px;
   }
   .brief-sidebar {
     display: block;
@@ -2727,11 +2727,11 @@ main {
   font-size: 12px;
 }
 .priority-label {
-  font-size: 10px;
+  font-size: 11px;
 }
 .queue-column-labels,
 .operating-table th {
-  font-size: 9px;
+  font-size: 11px;
 }
 .filter-tabs button {
   font-size: 11px;
@@ -2749,7 +2749,7 @@ main {
   font-size: 11px;
 }
 .workspace-footer {
-  font-size: 9px;
+  font-size: 11px;
 }
 .footer-mark {
   display: inline-flex;
@@ -2765,18 +2765,1002 @@ main {
     font-size: 11px;
   }
   .queue-record small {
-    font-size: 10px;
+    font-size: 11px;
   }
   .priority-label {
-    font-size: 9px;
+    font-size: 11px;
   }
   .cohort-meta {
-    font-size: 10px;
+    font-size: 11px;
   }
   .cohort-title p {
-    font-size: 10px;
+    font-size: 11px;
   }
   .workspace-footer {
-    font-size: 8px;
+    font-size: 10px;
+  }
+}
+/* CohortOps working-surface refinements */
+.brand {
+  font-size: 22px;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+}
+.brand small {
+  font-size: 9px;
+  letter-spacing: 1px;
+}
+.workspace-label {
+  font-size: 10px;
+}
+.cohort-picker {
+  margin-bottom: 23px;
+}
+.sidebar-context {
+  margin-top: 32px;
+  padding: 0 9px;
+  color: #53664a;
+  font-size: 11px;
+}
+.sidebar-context > .small-dot {
+  display: inline-block;
+  margin-right: 7px;
+}
+.sidebar-context p {
+  font-size: 11px;
+  line-height: 1.8;
+  margin-top: 7px;
+}
+.sidebar-bottom > button {
+  font-size: 12px;
+}
+.operator {
+  font-size: 12px;
+}
+.operator small {
+  font-size: 11px;
+}
+.topbar {
+  height: 60px;
+}
+.topbar-actions {
+  gap: 15px;
+}
+.command-trigger {
+  font-size: 11px;
+}
+.command-trigger kbd {
+  font-size: 10px;
+  margin-left: 10px;
+}
+.breadcrumb {
+  font-size: 12px;
+}
+.main-shell {
+  container-type: inline-size;
+  container-name: workspace;
+  transition:
+    width 0.18s ease,
+    margin-right 0.18s ease;
+}
+.app-shell main {
+  padding: 24px 30px 0;
+}
+.page-heading {
+  margin-bottom: 18px;
+  gap: 15px;
+}
+.page-heading h1 {
+  font-size: 29px;
+  margin-top: 0;
+  letter-spacing: -1px;
+}
+.page-heading p {
+  font-size: 12px;
+  margin-top: 5px;
+}
+.page-heading > .demo-label {
+  font-size: 11px;
+  white-space: nowrap;
+}
+.workspace-surface {
+  animation: context-enter 0.14s ease-out;
+}
+.workspace-surface:focus-visible {
+  outline: 2px solid #819574;
+  outline-offset: 7px;
+  border-radius: 3px;
+}
+.cohort-overview {
+  padding: 14px 0;
+  gap: 24px;
+  background: transparent;
+  border: 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  border-radius: 0;
+  box-shadow: none;
+  flex-wrap: nowrap;
+}
+.cohort-title h2 {
+  font-size: 21px;
+  margin-top: 0;
+  gap: 9px;
+}
+.cohort-title h2 .tag {
+  font-size: 11px;
+}
+.cohort-title p {
+  font-size: 11px;
+  margin-top: 4px;
+  flex-wrap: wrap;
+}
+.cohort-meta {
+  font-size: 11px;
+  margin-top: 7px;
+  gap: 13px;
+}
+.readiness-summary {
+  padding: 0 20px;
+  gap: 12px;
+  border-left: 1px solid var(--line);
+  border-right: 1px solid var(--line);
+}
+.readiness-value {
+  font-size: 32px;
+  letter-spacing: -1px;
+}
+.readiness-value span {
+  font-size: 16px;
+}
+.readiness-summary strong,
+.readiness-summary p {
+  font-size: 11px;
+}
+.mini-progress {
+  margin-top: 8px;
+}
+.launch-status {
+  display: block;
+  max-width: 210px;
+  width: auto;
+  border: 0;
+  padding: 0;
+}
+.launch-status .eyebrow {
+  font-size: 10px;
+  display: block;
+}
+.launch-status > strong {
+  font-size: 12px;
+  margin-top: 3px;
+}
+.launch-status p {
+  font-size: 11px;
+  margin-top: 4px;
+  white-space: normal;
+}
+.launch-status button {
+  font-size: 11px;
+  margin-top: 5px;
+  margin-left: 0;
+}
+.lifecycle {
+  margin: 10px 0 21px;
+  padding-bottom: 10px;
+}
+.lifecycle > button {
+  font-size: 11px;
+  gap: 6px;
+  padding: 7px 5px;
+}
+.stage-number {
+  font-size: 10px;
+}
+.stage-current {
+  font-size: 9px;
+  letter-spacing: 0.2px;
+}
+.section-head {
+  margin-bottom: 13px;
+}
+.section-head .eyebrow {
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+.section-head h2 {
+  font-size: 18px;
+}
+.queue-tools {
+  gap: 9px;
+}
+.queue-column-labels {
+  font-size: 10px;
+  padding-top: 10px;
+}
+.queue-row {
+  padding: 13px 6px 13px 0;
+  transition:
+    background 0.12s,
+    box-shadow 0.12s;
+  animation: record-enter 0.14s ease-out;
+}
+.queue-record strong {
+  font-size: 12px;
+}
+.queue-record small {
+  font-size: 11px;
+}
+.queue-owner {
+  font-size: 11px;
+}
+.priority-label {
+  font-size: 11px;
+}
+.queue-foot {
+  font-size: 11px;
+}
+.queue-foot button {
+  font-size: 11px;
+}
+.work-queue {
+  max-height: clamp(330px, 53vh, 660px);
+}
+.timeline small,
+.timeline button > span > span,
+.event-line small,
+.event-line span > span {
+  font-size: 11px;
+}
+.event-line strong {
+  font-size: 12px;
+}
+.timeline button {
+  padding-bottom: 20px;
+}
+.workspace-footer {
+  display: block;
+  padding: 15px 0;
+  margin-top: 22px;
+  font-size: 11px;
+  line-height: 1.7;
+}
+.record-selected,
+.operating-table tbody tr.record-selected:hover {
+  background: #eaf0e3 !important;
+  box-shadow: inset 3px 0 #607d51;
+}
+.queue-row.record-selected .queue-marker {
+  background: #607d51;
+}
+.event-line.record-selected {
+  padding-left: 10px;
+  padding-right: 8px;
+}
+.operating-table tbody tr {
+  transition: background 0.12s;
+}
+.person-cell strong {
+  font-size: 12px;
+}
+.person-cell small,
+.cell-sub {
+  font-size: 11px;
+}
+.operating-table th {
+  font-size: 10px;
+}
+.operating-table td {
+  font-size: 12px;
+}
+.cell-title,
+.stage-label {
+  font-size: 12px;
+}
+.tag {
+  font-size: 11px;
+}
+.table-toolbar .button,
+.select-label,
+.select-label select {
+  font-size: 12px;
+}
+.surface-caption {
+  font-size: 11px;
+  line-height: 1.8;
+}
+.toolbar-detail {
+  font-size: 11px;
+}
+.admissions-summary p {
+  font-size: 13px;
+}
+.boundary-copy {
+  font-size: 11px;
+}
+.stage-strip button {
+  font-size: 12px;
+}
+.participant-summary {
+  padding: 12px 0 16px;
+}
+.participant-summary h2 {
+  font-size: 26px;
+}
+.participant-summary > p {
+  font-size: 11px;
+}
+.participant-tabs {
+  margin: 16px 0;
+}
+.participant-tabs button span {
+  font-size: 11px;
+}
+.support-row small {
+  font-size: 11px;
+}
+.support-row {
+  transition: background 0.14s;
+}
+.progress-wrap {
+  font-size: 11px;
+}
+.progress > span,
+.mini-progress > span {
+  transition: width 0.2s ease-out;
+}
+.applicant-ticket {
+  cursor: default;
+  padding: 12px;
+  animation: record-enter 0.14s ease-out;
+  transition:
+    background 0.12s,
+    border-color 0.12s;
+}
+.ticket-open {
+  width: 100%;
+  padding: 0;
+  text-align: left;
+  border-radius: 2px;
+}
+.ticket-open > span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.ticket-open strong {
+  font-size: 12px;
+}
+.ticket-open p {
+  font-size: 11px;
+  margin: 9px 0;
+}
+.ticket-open:hover strong {
+  color: var(--accent);
+}
+.applicant-ticket footer {
+  font-size: 11px;
+}
+.applicant-ticket > small {
+  font-size: 11px;
+}
+.ticket-move {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  color: #526746;
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid var(--line);
+}
+.ticket-move select {
+  min-width: 0;
+  width: 100%;
+  padding: 5px 2px 5px 5px;
+  border: 1px solid #d1ddc5;
+  border-radius: 3px;
+  background: #f7faf3;
+  color: var(--ink);
+  font-size: 11px;
+}
+.admissions-board > section {
+  min-width: 230px;
+}
+.admissions-board h3 {
+  font-size: 12px;
+}
+.admissions-board header > span,
+.board-empty {
+  font-size: 11px;
+}
+.inspector-topline {
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+.inspector-identity .eyebrow {
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+.inspector-identity > p {
+  font-size: 12px;
+  line-height: 1.8;
+}
+.inspector-body {
+  padding: 20px 25px 35px;
+}
+.inspector-field {
+  font-size: 12px;
+}
+.inspector-field select,
+.inspector-field textarea {
+  font-size: 12px;
+}
+.inspector-body h3 {
+  font-size: 14px;
+}
+.record-facts > span {
+  font-size: 11px;
+}
+.record-facts strong {
+  font-size: 12px;
+}
+.checklist label {
+  font-size: 12px;
+  padding: 12px 0;
+}
+.checklist label small,
+.field-help,
+.inspector-linked small,
+.audit-list small {
+  font-size: 11px;
+}
+.inspector-linked {
+  font-size: 12px;
+}
+.audit-list p,
+.boundary-note {
+  font-size: 11px;
+}
+.audit-list strong {
+  font-size: 12px;
+}
+.inspector-body .button {
+  font-size: 12px;
+}
+.inspector {
+  width: 450px;
+}
+.inspector[data-state="closed"] {
+  animation: inspector-exit 0.16s ease-in;
+}
+.inspector[data-state="open"] {
+  animation: slide 0.16s ease-out;
+}
+.inspector-overlay[data-state="closed"] {
+  animation: fade-out 0.16s ease-in;
+}
+.split-inspector {
+  width: 440px;
+  border-left: 1px solid #d4dfc9;
+  box-shadow: none;
+  background: #fcfdf9;
+}
+.split-inspector .inspector-topline {
+  background: #eff4e8;
+}
+.demo-controls-trigger {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #54694b;
+  font-size: 11px;
+  padding: 6px 8px;
+  border-radius: 4px;
+}
+.demo-controls-trigger:hover,
+.demo-controls-trigger[data-state="open"] {
+  background: #eaf0e2;
+}
+.demo-controls-panel {
+  width: 300px;
+  max-width: calc(100vw - 24px);
+  padding: 18px;
+  background: #fff;
+  border: 1px solid #d7e2cd;
+  border-radius: 5px;
+  z-index: 65;
+  box-shadow: 0 5px 20px #23341e1a;
+  animation: context-enter 0.12s ease-out;
+}
+.demo-controls-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.demo-controls-heading h2 {
+  font-size: 15px;
+}
+.demo-controls-panel > p {
+  font-size: 12px;
+  line-height: 1.8;
+}
+.demo-current-date {
+  margin: 14px 0;
+  font-size: 17px;
+  font-family: var(--font-display);
+}
+.demo-current-date > span {
+  display: block;
+  font-size: 11px;
+  font-family: var(--font-body);
+  color: #5b6e50;
+  margin-top: 3px;
+}
+.demo-controls-panel .button {
+  font-size: 12px;
+  margin-top: 8px;
+}
+.demo-controls-panel .field-help {
+  font-size: 11px;
+  margin-bottom: 0;
+}
+.command-input input {
+  font-size: 14px;
+}
+.command-caption {
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+.command-option strong {
+  font-size: 13px;
+}
+.command-option small {
+  font-size: 12px;
+}
+.command-dialog > footer {
+  font-size: 11px;
+}
+.command-dialog kbd {
+  font-size: 10px;
+}
+.brief-masthead,
+.brief-masthead .eyebrow,
+.brief-issue {
+  font-size: 11px;
+}
+.brief-title {
+  padding: 22px 0;
+}
+.brief-title h2 {
+  font-size: 27px;
+}
+.brief-title h2 em {
+  font-size: 29px;
+}
+.brief-title > p {
+  font-size: 13px;
+}
+.brief-verdict strong {
+  font-size: 12px;
+}
+.brief-verdict span:not(.tag) {
+  font-size: 11px;
+}
+.brief-section p,
+.brief-action strong {
+  font-size: 12px;
+}
+.brief-action small,
+.brief-change small,
+.brief-paper-footer,
+.brief-source-list,
+.brief-sidebar > p {
+  font-size: 11px;
+}
+.brief-sidebar > h3 {
+  font-size: 21px;
+}
+.brief-sidebar .button {
+  font-size: 12px;
+}
+.brief-sidebar .boundary-note {
+  font-size: 11px;
+}
+.brief-issue {
+  letter-spacing: 1px;
+}
+@media (min-width: 1280px) {
+  .app-shell.inspect-open .main-shell {
+    width: calc(100% - 670px);
+    margin-right: 440px;
+  }
+  .toast {
+    left: 50%;
+  }
+}
+@container workspace (max-width:1000px) {
+  .cohort-overview {
+    gap: 15px;
+  }
+  .readiness-summary {
+    padding: 0 13px;
+  }
+  .cohort-title p {
+    max-width: 340px;
+  }
+  .launch-status {
+    max-width: 180px;
+  }
+  .cohort-meta {
+    gap: 10px;
+  }
+  .topbar {
+    padding: 0 22px;
+  }
+  .topbar-actions {
+    gap: 7px;
+  }
+  .command-trigger > span,
+  .command-trigger kbd {
+    display: none;
+  }
+}
+@container workspace (max-width:900px) {
+  .control-columns {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 23px;
+  }
+  .context-column {
+    padding-left: 0;
+    border: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+  }
+  .logistics-surface {
+    padding-top: 0;
+    border: 0;
+    margin: 0;
+  }
+  .brief-layout {
+    grid-template-columns: 1fr;
+  }
+  .brief-sidebar {
+    position: static;
+    display: block;
+  }
+  .cohort-overview {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .cohort-title {
+    grid-column: 1/-1;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 4px 15px;
+  }
+  .cohort-title h2 {
+    grid-row: 1;
+  }
+  .cohort-title p {
+    grid-row: 1;
+    max-width: none;
+  }
+  .cohort-meta {
+    grid-column: 1/-1;
+    margin-top: 3px;
+  }
+  .readiness-summary {
+    padding: 0;
+    border: 0;
+    justify-content: flex-start;
+  }
+  .launch-status {
+    max-width: none;
+    width: 100%;
+  }
+  .launch-status .eyebrow {
+    display: none;
+  }
+  .launch-status button {
+    margin-top: 4px;
+  }
+  .page-heading h1 {
+    font-size: 27px;
+  }
+  .main-shell .topbar-actions .demo-controls-trigger > span {
+    display: none;
+  }
+  .participant-summary {
+    gap: 12px;
+  }
+  .participant-summary > p {
+    max-width: 260px;
+  }
+  .surface-caption {
+    flex-direction: column;
+    gap: 3px;
+  }
+  .boundary-copy {
+    max-width: 190px;
+  }
+  .queue-tools {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .queue-tools .search-field {
+    max-width: 320px;
+  }
+}
+@container workspace (max-width:720px) {
+  .queue-row {
+    grid-template-columns: 3px minmax(0, 1fr) 100px 15px;
+    gap: 10px;
+  }
+  .queue-owner {
+    display: none;
+  }
+  .queue-column-labels {
+    grid-template-columns: 1fr 122px;
+  }
+  .queue-column-labels span:nth-child(2) {
+    display: none;
+  }
+  .filter-tabs {
+    gap: 16px;
+  }
+  .cohort-title {
+    display: block;
+  }
+  .cohort-title p {
+    margin-top: 5px;
+  }
+  .cohort-meta {
+    margin-top: 7px;
+  }
+  .admissions-summary {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 9px;
+  }
+  .boundary-copy {
+    max-width: none;
+  }
+  .page-heading {
+    align-items: flex-start;
+  }
+  .page-heading > .demo-label {
+    font-size: 10px;
+  }
+  .participant-summary {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .participant-summary > p {
+    max-width: none;
+  }
+  .toolbar-detail {
+    display: none;
+  }
+  .brief-paper {
+    padding: 22px;
+  }
+  .brief-title h2 {
+    font-size: 25px;
+  }
+  .brief-title h2 em {
+    font-size: 27px;
+  }
+}
+@media (max-width: 700px) {
+  .app-shell main {
+    padding: 21px 18px 0;
+  }
+  .brand {
+    gap: 9px;
+  }
+  .page-heading {
+    display: flex;
+    margin-bottom: 15px;
+  }
+  .page-heading h1 {
+    font-size: 26px;
+  }
+  .page-heading p {
+    font-size: 12px;
+    max-width: 270px;
+  }
+  .page-heading > .demo-label {
+    display: none;
+  }
+  .topbar {
+    height: 57px;
+  }
+  .topbar-actions {
+    gap: 4px;
+  }
+  .demo-controls-trigger > span {
+    display: none;
+  }
+  .cohort-overview {
+    padding: 13px 0;
+  }
+  .cohort-title h2 {
+    font-size: 21px;
+  }
+  .cohort-title p,
+  .cohort-meta {
+    font-size: 11px;
+  }
+  .cohort-meta {
+    flex-wrap: wrap;
+    gap: 6px 12px;
+  }
+  .readiness-value {
+    font-size: 29px;
+  }
+  .readiness-summary {
+    gap: 9px;
+  }
+  .readiness-summary p {
+    white-space: normal;
+  }
+  .launch-status > strong {
+    font-size: 12px;
+  }
+  .launch-status p,
+  .launch-status button {
+    font-size: 11px;
+  }
+  .launch-status button {
+    line-height: 1.6;
+  }
+  .lifecycle {
+    margin-bottom: 20px;
+  }
+  .lifecycle > button {
+    font-size: 11px;
+  }
+  .stage-number {
+    font-size: 10px;
+  }
+  .queue-record strong {
+    font-size: 12px;
+  }
+  .queue-record small {
+    font-size: 11px;
+  }
+  .priority-label {
+    font-size: 11px;
+  }
+  .context-column {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .timeline {
+    grid-template-columns: 1fr;
+  }
+  .timeline button {
+    padding-bottom: 19px;
+  }
+  .timeline button:not(:last-child):before {
+    display: block;
+  }
+  .timeline strong {
+    font-size: 12px;
+  }
+  .timeline button > svg {
+    display: block;
+  }
+  .logistics-surface {
+    border-top: 1px solid var(--line);
+    padding-top: 18px;
+  }
+  .workspace-footer {
+    font-size: 11px;
+  }
+  .inspector {
+    width: 100%;
+  }
+  .command-input input {
+    font-size: 13px;
+  }
+  .brief-paper {
+    padding: 18px;
+  }
+  .brief-title h2 {
+    font-size: 24px;
+  }
+  .brief-title h2 em {
+    font-size: 26px;
+  }
+  .brief-masthead {
+    font-size: 11px;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+  .brief-masthead .eyebrow {
+    font-size: 10px;
+  }
+  .brief-masthead > span:last-child {
+    font-size: 11px;
+  }
+  .brief-section p {
+    font-size: 12px;
+  }
+  .brief-verdict > .tag {
+    margin-left: 0;
+  }
+  .support-row small {
+    font-size: 11px;
+  }
+  .support-row .tag {
+    font-size: 11px;
+  }
+  .participant-summary h2 small {
+    font-size: 12px;
+  }
+  .surface-caption {
+    font-size: 11px;
+  }
+  .toast {
+    left: 50%;
+    font-size: 12px;
+  }
+}
+@keyframes context-enter {
+  from {
+    opacity: 0.55;
+    transform: translateY(3px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes record-enter {
+  from {
+    opacity: 0.45;
+    transform: translateY(2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes inspector-exit {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(30px);
+    opacity: 0;
+  }
+}
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@container workspace (min-width:1001px) {
+  .queue-tools {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+  }
+  .queue-tools .search-field {
+    max-width: 200px;
+  }
+  .filter-tabs {
+    gap: 14px;
   }
 }

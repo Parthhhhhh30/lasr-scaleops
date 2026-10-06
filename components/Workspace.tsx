@@ -9,10 +9,8 @@ import {
   FileText,
   GitBranch,
   PanelLeftClose,
-  RotateCcw,
   Users,
   X,
-  Clock3,
 } from "lucide-react";
 import { useOpsStore, type View } from "@/store/useOpsStore";
 import { CohortControl } from "@/features/CohortControl";
@@ -22,7 +20,8 @@ import { OperationsBrief } from "@/features/OperationsBrief";
 import { Inspector } from "@/features/Inspector";
 import { CommandMenu } from "@/features/CommandMenu";
 import { ConfirmDialog } from "./dialogs";
-import { formatDate } from "./ui";
+import { DemoControls } from "./DemoControls";
+import { SPLIT_INSPECTOR_QUERY, useMediaQuery } from "./useMediaQuery";
 const navigation = [
   { id: "control", label: "Cohort Control", icon: Activity },
   { id: "admissions", label: "Admissions Flow", icon: GitBranch },
@@ -32,24 +31,26 @@ const navigation = [
 const headings: Record<View, { label: string; description: string }> = {
   control: {
     label: "Cohort Control",
-    description: "Keep the programme moving. Give every exception an owner.",
+    description:
+      "Open exceptions, programme deadlines and coordination checks.",
   },
   admissions: {
     label: "Admissions Flow",
-    description: "A clear path from application to accepted offer.",
+    description:
+      "Application stages, reviewer ownership and outstanding feedback.",
   },
   participants: {
     label: "Participant Ops",
-    description:
-      "From accepted offer to a supported, programme-ready participant.",
+    description: "Participant checklists, allocations and support requests.",
   },
   brief: {
-    label: "Operations Brief",
-    description: "A shared operating picture, grounded in the current records.",
+    label: "Current Operations Brief",
+    description: "Recomputed automatically from the current operational state.",
   },
 };
 export function Workspace() {
-  const s = useOpsStore();
+  const s = useOpsStore(),
+    desktop = useMediaQuery(SPLIT_INSPECTOR_QUERY);
   const [commandOpen, setCommandOpen] = useState(false),
     [resetOpen, setResetOpen] = useState(false),
     [aboutOpen, setAboutOpen] = useState(false),
@@ -67,7 +68,8 @@ export function Workspace() {
         e.key === "/" &&
         !["INPUT", "TEXTAREA", "SELECT"].includes(
           (e.target as HTMLElement).tagName,
-        )
+        ) &&
+        !document.querySelector('[role="dialog"]')
       ) {
         e.preventDefault();
         document
@@ -85,20 +87,25 @@ export function Workspace() {
   }, [s.toast]);
   const cohort = s.data.cohorts.find((c) => c.id === s.cohortId)!;
   return (
-    <div className="app-shell">
+    <div
+      className={`app-shell ${desktop && s.selection ? "inspect-open" : ""}`}
+    >
       <a className="skip-link" href="#main">
         Skip to workspace
       </a>
-      <aside className={`sidebar ${mobileNav ? "mobile-open" : ""}`}>
+      <aside
+        className={`sidebar ${mobileNav ? "mobile-open" : ""}`}
+        aria-label="Workspace navigation"
+      >
         <div className="brand">
           <span className="brand-symbol">
-            S
+            C
             <span>
               <ArrowUpRight size={16} />
             </span>
           </span>
           <div>
-            ScaleOps<small>PROGRAMME OPERATIONS</small>
+            CohortOps<small>PROGRAMME OPERATIONS</small>
           </div>
           <button
             className="mobile-only icon-button"
@@ -108,9 +115,7 @@ export function Workspace() {
             <X size={18} />
           </button>
         </div>
-        <div className="workspace-label">
-          WORKSPACE <span>01</span>
-        </div>
+        <div className="workspace-label">ACTIVE COHORT</div>
         <label className="cohort-picker">
           <span className="cohort-dot" />
           <select
@@ -131,6 +136,7 @@ export function Workspace() {
             <button
               key={n.id}
               className={`nav-item ${s.view === n.id ? "active" : ""}`}
+              aria-current={s.view === n.id ? "page" : undefined}
               onClick={() => {
                 s.setView(n.id);
                 setMobileNav(false);
@@ -142,26 +148,25 @@ export function Workspace() {
             </button>
           ))}
         </nav>
-        <div className="sidebar-note">
-          <span className="small-dot" /> A quieter way to scale.
+        <div className="sidebar-context">
+          <span className="small-dot" />
+          <span>Local demonstration</span>
           <p>
-            One cohort. Clear ownership.
+            Changes saved in this browser.
             <br />
-            Fewer things falling through.
+            Reminder drafts are never sent.
           </p>
         </div>
         <div className="sidebar-bottom">
           <button onClick={() => setAboutOpen(true)}>
-            <BookOpen size={16} /> About this workspace
+            <BookOpen size={16} />
+            About this workspace
             <ArrowUpRight size={14} />
-          </button>
-          <button onClick={() => setResetOpen(true)}>
-            <RotateCcw size={16} /> Reset demonstration
           </button>
           <div className="operator">
             <span className="operator-avatar">DO</span>
             <div>
-              Demo operator<small>Local workspace · no messages sent</small>
+              Demo operator<small>Synthetic data only</small>
             </div>
           </div>
         </div>
@@ -171,8 +176,8 @@ export function Workspace() {
           <div className="breadcrumb">
             <button
               className="mobile-only icon-button"
-              onClick={() => setMobileNav(true)}
               aria-label="Open navigation"
+              onClick={() => setMobileNav(true)}
             >
               <PanelLeftClose size={18} />
             </button>
@@ -181,9 +186,7 @@ export function Workspace() {
             <strong>{cohort.name}</strong>
           </div>
           <div className="topbar-actions">
-            <span className="demo-label">
-              <span /> Synthetic demo
-            </span>
+            <DemoControls onReset={() => setResetOpen(true)} />
             <button
               className="command-trigger"
               aria-label="Search & commands"
@@ -198,57 +201,47 @@ export function Workspace() {
         <main id="main">
           <div className="page-heading">
             <div>
-              <div className="eyebrow">
-                {s.view === "control"
-                  ? "THE COHORT OPERATING SYSTEM"
-                  : s.view === "brief"
-                    ? "WEEKLY · OPERATOR EDITION"
-                    : "PROGRAMME WORKSPACE"}
-              </div>
-              <h1>
+              <h1 id="workspace-heading" tabIndex={-1}>
                 {headings[s.view].label}
-                <span className="heading-dot">.</span>
+                <span className="heading-dot" aria-hidden="true">
+                  .
+                </span>
               </h1>
               <p>{headings[s.view].description}</p>
             </div>
-            <div className="clock-control">
-              <span>
-                <Clock3 size={13} /> Demo clock · {formatDate(s.data.now)} 2027
-              </span>
-              <button onClick={s.advanceTime}>
-                Simulate +3 days <ArrowUpRight size={13} />
-              </button>
-            </div>
+            <span className="demo-label">
+              <span />
+              Synthetic demo
+            </span>
           </div>
           {s.storageNotice && (
             <div className="notice" role="alert">
               {s.storageNotice}
             </div>
           )}
-          {!s.hydrated ? (
-            <div className="loading-surface" role="status">
-              Loading your local workspace…
-            </div>
-          ) : s.view === "control" ? (
-            <CohortControl />
-          ) : s.view === "admissions" ? (
-            <Admissions key={s.cohortId} />
-          ) : s.view === "participants" ? (
-            <ParticipantOps key={s.cohortId} />
-          ) : (
-            <OperationsBrief key={s.cohortId} />
-          )}
+          <section
+            id="workspace-surface"
+            className="workspace-surface"
+            aria-labelledby="workspace-heading"
+            tabIndex={-1}
+            key={`${s.view}-${s.cohortId}`}
+          >
+            {!s.hydrated ? (
+              <div className="loading-surface" role="status">
+                Loading your local workspace…
+              </div>
+            ) : s.view === "control" ? (
+              <CohortControl />
+            ) : s.view === "admissions" ? (
+              <Admissions />
+            ) : s.view === "participants" ? (
+              <ParticipantOps />
+            ) : (
+              <OperationsBrief />
+            )}
+          </section>
           <footer className="workspace-footer">
-            <span>
-              Independent portfolio prototype · Synthetic demonstration data —
-              not LASR internal data.
-            </span>
-            <span>
-              RULES, THEN AUTOMATION{" "}
-              <span className="footer-mark">
-                <ArrowUpRight size={16} />
-              </span>
-            </span>
+            Synthetic demonstration data — not LASR internal data.
           </footer>
         </main>
       </div>
@@ -274,8 +267,8 @@ export function Workspace() {
       <ConfirmDialog
         open={aboutOpen}
         onOpenChange={setAboutOpen}
-        title="An operating system for the cohort"
-        description="ScaleOps is an independent portfolio prototype for programme operations. All names, dates, teams and records are fictional. Rules surface coordination needs; people retain admissions, legal and welfare decisions. Data stays in this browser. Reminder drafts are templates, never sent. No live AI model is connected."
+        title="About CohortOps"
+        description="CohortOps is an independent programme operations prototype designed around the LASR Programme Operations Associate use case. It is not affiliated with LASR or Arcadia Impact. All names, dates, teams and records are fictional. Surface the exception, name the owner and close the loop: deterministic rules support coordination; people retain admissions, legal and welfare decisions. Data stays in this browser. Reminder drafts are templates, never sent. No live AI model is connected."
         confirmLabel="Back to workspace"
         onConfirm={() => {}}
       />

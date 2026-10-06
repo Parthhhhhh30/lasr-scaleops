@@ -50,11 +50,8 @@ export function CohortControl() {
   const events = s.data.events.filter((e) => e.cohortId === s.cohortId);
   return (
     <>
-      <section className="cohort-overview">
+      <section className="cohort-overview" aria-label="Cohort status">
         <div className="cohort-title">
-          <span className="eyebrow">
-            ACTIVE COHORT / {s.cohortId.toUpperCase()}
-          </span>
           <h2>
             {c.name}
             <Tag>{c.stage}</Tag>
@@ -134,10 +131,7 @@ export function CohortControl() {
       </section>
       <div className="control-columns">
         <section className="queue-surface">
-          <SectionHead
-            eyebrow="EXCEPTIONS, NOT EVERYTHING"
-            title="The attention queue"
-          >
+          <SectionHead eyebrow="OPEN EXCEPTIONS" title="The attention queue">
             <span className="count-label">{queue.length} open items</span>
           </SectionHead>
           <div className="queue-tools">
@@ -174,7 +168,11 @@ export function CohortControl() {
             {visible.length ? (
               visible.map((q) => (
                 <button
-                  className="queue-row"
+                  className={`queue-row ${s.selection?.kind === q.selection.kind && s.selection?.id === q.selection.id ? "record-selected" : ""}`}
+                  aria-pressed={
+                    s.selection?.kind === q.selection.kind &&
+                    s.selection?.id === q.selection.id
+                  }
                   key={q.id}
                   onClick={() => s.select(q.selection)}
                 >
@@ -257,7 +255,10 @@ export function CohortControl() {
             {events.map((e) => (
               <button
                 key={e.id}
-                className="event-line"
+                className={`event-line ${s.selection?.kind === "event" && s.selection.id === e.id ? "record-selected" : ""}`}
+                aria-pressed={
+                  s.selection?.kind === "event" && s.selection.id === e.id
+                }
                 onClick={() => s.select({ kind: "event", id: e.id })}
               >
                 <span>
@@ -274,17 +275,6 @@ export function CohortControl() {
               </button>
             ))}
           </section>
-          <div className="editorial-note">
-            <span>THE OPERATING PRINCIPLE</span>
-            <p>
-              Surface the exception.
-              <br />
-              Name the owner.
-              <br />
-              Close the loop.
-            </p>
-            <span className="note-number">01 — 03</span>
-          </div>
         </aside>
       </div>
     </>

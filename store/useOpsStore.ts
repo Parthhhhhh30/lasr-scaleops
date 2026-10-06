@@ -20,6 +20,7 @@ interface OpsStore {
   stage: Lifecycle | null;
   filter: Filter;
   query: string;
+  filterResetVersion: number;
   selection: Selection | null;
   hydrated: boolean;
   toast: string;
@@ -86,6 +87,7 @@ export const useOpsStore = create<OpsStore>((set, get) => {
     stage: null,
     filter: "all",
     query: "",
+    filterResetVersion: 0,
     selection: null,
     hydrated: false,
     toast: "",
@@ -126,7 +128,12 @@ export const useOpsStore = create<OpsStore>((set, get) => {
       set({ selection });
     },
     clearFilters() {
-      set({ filter: "all", stage: null, query: "" });
+      set({
+        filter: "all",
+        stage: null,
+        query: "",
+        filterResetVersion: get().filterResetVersion + 1,
+      });
     },
     completeRequirement(pid, rid) {
       const p = get().data.participants.find((p) => p.id === pid),

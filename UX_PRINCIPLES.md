@@ -10,7 +10,7 @@ Light warm working paper, sage navigation, ink type and restrained rust priority
 
 ## Context and feedback
 
-Record inspectors preserve the current workspace. Every transaction gives feedback and an audit trail. Readiness and queue removal respond immediately. Reversible completion can be toggled. Room conflict attempts return an explanation instead of writing invalid state. Reminder drafts are idempotent and labeled as unsent. Empty states explain how to return to records.
+Desktop record inspectors preserve a readable, interactive workspace in a split view; tablet/mobile use a modal drawer. Selected rows retain a subtle sage background and leading border until closed. Every transaction gives feedback and an audit trail. Readiness and queue removal respond immediately. Reversible completion can be toggled. Room conflict attempts return an explanation instead of writing invalid state. Reminder drafts are idempotent and labeled as unsent. Empty states explain how to return to records.
 
 ## Keyboard and responsive behavior
 
@@ -21,3 +21,13 @@ Native buttons/selects/checkboxes, semantic tables, visible focus, a skip link a
 No simulated chatbot, AI-insights card, candidate score, decorative chart or marketing hero. No drag-and-drop admission decisions; the inspector gives a deliberate stage control and human confirmation for offer/acceptance. Snapshot memo text is not a competing source of truth: the visible brief always recomputes.
 
 Accessibility checks combine DOM semantics, keyboard/browser journeys and automated contrast analysis; automation does not replace assistive-technology review. System-scale changes, real-screen-reader evaluation and additional browsers remain production hardening work.
+
+## Refinement decisions
+
+Cohort Control uses one compact operational rail with cohort details, counts, readiness and launch dependencies. The attention queue starts sooner on a normal laptop. Working copy describes records and actions; product philosophy is in About, README and PRODUCT.
+
+Supporting operational context, inspector labels, timelines, command detail and table text use at least 11px. Section labels remain compact at 10px; the product subtitle is 9px decorative identity. There is no tiny operational legend needed to understand state. Contrast checks remain mandatory.
+
+At 1280px and above a 440px inspector resizes the main workspace without a dim overlay. It is a labeled, nonmodal region; focus may move back to the table/search and Escape closes it. At narrower widths the same record uses a modal drawer, focus containment and an overlay. Container queries respond to the workspace's actual available width.
+
+The brief's live status is explicit, with no generation theatre. Native ticket selectors provide direct stage movement without unstable drag-and-drop; sensitive destinations require reviewer confirmation. Demo clock simulation is discoverable in its own popover. Commands focus the result they reveal. Context changes, new records, readiness progress and inspector opening/closing use fast meaningful transitions; reduced motion disables them.

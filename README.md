@@ -1,6 +1,8 @@
-# LASR ScaleOps
+# CohortOps
 
-A cohort operating workspace for the coordination work between an application and a supported research participant. Built as an independent portfolio prototype for the **LASR Labs / Arcadia Impact Programme Operations Associate** application.
+**CohortOps — an independent programme operations prototype designed around the LASR Programme Operations Associate use case.**
+
+A cohort operating workspace for the coordination work between an application and a supported research participant. It is not affiliated with LASR or Arcadia Impact. The repository remains `lasr-scaleops`.
 
 **Synthetic demonstration data — not LASR internal data.** Names, programme dates, teams, rooms, checklists and operational policies are fictional. This is not an official LASR product and makes no claim about its internal processes.
 
@@ -8,7 +10,7 @@ A cohort operating workspace for the coordination work between an application an
 
 ## The operational problem
 
-Scaling a programme multiplies handoffs: reviewer feedback, missing documents, access invitations, arrivals, room bookings and support requests. A list of headline metrics does little to help an operator close these loops. ScaleOps instead starts with an exception queue: what needs attention, why, who owns it, and which record to act on.
+Scaling a programme multiplies handoffs: reviewer feedback, missing documents, access invitations, arrivals, room bookings and support requests. A list of headline metrics does little to help an operator close these loops. CohortOps instead starts with an exception queue: what needs attention, why, who owns it, and which record to act on.
 
 The role's programme administration, participant support, scheduling, communications and process-improvement work motivates the four connected surfaces:
 
@@ -23,8 +25,8 @@ The role's programme administration, participant support, scheduling, communicat
 2. Open **Room booking overlap** and move orientation to the seminar room. The logistics alert disappears. A proposed overlapping room assignment is rejected.
 3. Resolve the missing workspace invitation support request. The support queue and weekly brief update; the participant's support history retains the closed request.
 4. In Admissions, filter to **Initial screen**, open Amara, move her to Interview and record feedback. The stage clock resets and the board reflects the move.
-5. Open the brief to see these changes. Use **Simulate +3 days** to surface new overdue actions. Switch cohort to compare different programme contexts.
-6. Use **⌘K / Ctrl+K** to find a person or run commands. **/** focuses the current search. Escape dismisses the inspector or command menu. Reset restores all synthetic records after confirmation.
+5. Open the brief to see these changes. Open **Demo controls** in the top bar and choose **Advance 3 days** to surface new overdue actions. Switch cohort to compare different programme contexts.
+6. Use **⌘K / Ctrl+K** to find a person or run commands. **/** focuses the current search. Escape dismisses the inspector or command menu. Reset is inside Demo controls and restores all synthetic records after confirmation.
 
 Changes persist locally across refreshes. Reset clears changes, notes and reminder drafts. No messages are sent, and no credentials are needed.
 
@@ -58,11 +60,11 @@ Read [ARCHITECTURE.md](ARCHITECTURE.md), [DATA_MODEL.md](DATA_MODEL.md) and [DEC
 
 Operational truth is reproducible: elapsed review time, overdue actions, missing requirements, room interval overlaps and brief source events are explicit calculations. The 72-hour reviewer and 48-hour support windows are **demonstration policies, not LASR policies**. Checklist readiness is not legal eligibility. Launch coordination clearance also checks open support, overdue tasks and room conflicts.
 
-No live model is connected. Reminder drafts use a fixed template, are deduplicated per record/day, require human review and never send. The weekly brief is deterministic, not AI generated. Visa/legal, welfare and complaints require human handling; offer/acceptance UI changes confirm a reviewer decision. ScaleOps does not score candidates, infer protected attributes or provide legal advice. See [AI_BOUNDARIES.md](AI_BOUNDARIES.md).
+No live model is connected. Reminder drafts use a fixed template, are deduplicated per record/day, require human review and never send. The Current Operations Brief recomputes automatically. There is no generation button or simulated compilation timestamp; copying exports the current deterministic content. Visa/legal, welfare and complaints require human handling; offer/acceptance UI changes confirm a reviewer decision. CohortOps does not score candidates, infer protected attributes or provide legal advice. See [AI_BOUNDARIES.md](AI_BOUNDARIES.md).
 
 ## Product decisions
 
-The workspace combines warm light surfaces, quiet sage navigation, ink headings and a restrained rust attention accent. Queues, an interactive lifecycle, a contextual inspector and an editorial memo each serve different work; they do not repeat one card layout. Desktop density is retained; narrow screens use navigation controls and horizontally scrollable tables. Modal focus handling, keyboard commands and reduced-motion support are included. See [PRODUCT.md](PRODUCT.md) and [UX_PRINCIPLES.md](UX_PRINCIPLES.md).
+The workspace combines warm light surfaces, quiet sage navigation, ink headings and a restrained rust attention accent. Queues, an interactive lifecycle, a desktop split-view inspector and an editorial memo each serve different work; they do not repeat one card layout. Desktop density is retained; narrow screens use navigation controls and horizontally scrollable tables. At desktop widths of at least 1280px, the inspector is a 440px panel and the workspace resizes without a dim overlay or focus trap. Selected records stay highlighted. Smaller viewports use a modal drawer to preserve usable working width. Modal focus handling, Escape, keyboard commands and reduced-motion support are included. See [PRODUCT.md](PRODUCT.md) and [UX_PRINCIPLES.md](UX_PRINCIPLES.md).
 
 ## Tests
 
@@ -74,10 +76,22 @@ npm run build
 npm run test:e2e
 ```
 
-Playwright uses `/usr/bin/chromium` when available. Else install its matching browser with `npx playwright install chromium`, or set `PLAYWRIGHT_EXECUTABLE_PATH` to a compatible installed browser. The browser suite starts the production server if one is not already running. Build first. Tests cover domain boundaries, persistent actions, UI filters, four browser journeys and an automated accessibility/focus journey. A GitHub Actions workflow runs the quality gates on pushes and pull requests. See [TEST_PLAN.md](TEST_PLAN.md) and [BUILD_STATUS.md](BUILD_STATUS.md) for verified outcomes.
+Playwright uses `/usr/bin/chromium` when available. Else install its matching browser with `npx playwright install chromium`, or set `PLAYWRIGHT_EXECUTABLE_PATH` to a compatible installed browser. The browser suite starts the production server if one is not already running. Build first. Tests cover domain boundaries, persistent actions, UI filters, operational browser journeys and automated accessibility/focus checks for the split view, modal drawer, board moves, live brief and demo controls. A GitHub Actions workflow runs the quality gates on pushes and pull requests. See [TEST_PLAN.md](TEST_PLAN.md) and [BUILD_STATUS.md](BUILD_STATUS.md) for verified outcomes.
 
 ## Limits and production path
 
-This is a single-browser prototype, not a live programme administration system. It has no authentication, role permissions, outbound communications, file uploads, hosted storage, concurrent editing or true audit immutability. Administrative documents are checklist statuses, never stored documents. Sensitive case details should not be entered. The store contains synthetic records only, and can be edited by the browser owner. Acknowledging a risk is not resolving it. Room capacity is shown but attendee counts are not modeled. Board movement uses the inspector, not drag-and-drop. State survives refresh, but navigation returns to Cohort Control.
+This is a single-browser prototype, not a live programme administration system. It has no authentication, role permissions, outbound communications, file uploads, hosted storage, concurrent editing or true audit immutability. Administrative documents are checklist statuses, never stored documents. Sensitive case details should not be entered. The store contains synthetic records only, and can be edited by the browser owner. Acknowledging a risk is not resolving it. Room capacity is shown but attendee counts are not modeled. Board tickets offer a direct stage selector, with explicit human confirmations for Offer and Accepted; no drag-and-drop or candidate ranking is used. State survives refresh, but navigation returns to Cohort Control.
 
 Production would require a server-backed repository, relational IDs and constraints, cohort-scoped authorization, transactional audit records, retention/privacy policies, protected document storage, communication approval/delivery tracking, human escalation procedures and timezone-aware calendar integration. Optional AI assistance should use narrow, redacted inputs and reviewed outputs separate from authoritative operational records. There is no need to add a model to demonstrate deterministic coordination.
+
+## Product refinement evidence
+
+The compact cohort status rail brings the queue into view sooner. Philosophy lives in About and the product documentation; the working surface uses owners, dates and exceptions. Supporting operational text is at least 11px, with 10px section labels. Native board selectors make ordinary stage movement direct and keyboard accessible. Commands focus their result surface or opened inspector. Progress, record entry and split-view transitions remain brief and respect reduced motion.
+
+Updated recruiter-facing screenshots:
+
+- [Cohort Control](docs/screenshots/cohort-control.png)
+- [Admissions Flow](docs/screenshots/admissions-flow.png)
+- [Participant Ops with split-view inspector](docs/screenshots/participant-inspector.png)
+- [Current Operations Brief](docs/screenshots/operations-brief.png)
+- [Command palette](docs/screenshots/command-palette.png)

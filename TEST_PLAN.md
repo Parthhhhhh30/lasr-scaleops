@@ -14,17 +14,22 @@
 
 ## UI/integration proof
 
-`tests/ui.test.tsx`: cohort switch, lifecycle filters, applicant search/inspector stage movement, participant completion and live readiness, support resolution and brief recomputation, Ctrl+K command execution and offer confirmation.
+`tests/ui.test.tsx`: cohort switch, lifecycle filters, applicant search/inspector stage movement, participant completion and live readiness, support resolution and brief recomputation, Ctrl+K command execution and offer confirmation; live brief labels; complete filter clearing; direct board moves and confirmation; grouped demo controls.
 
 ## Browser proof
 
-Four operational Playwright production-server journeys plus one accessibility/focus journey:
+Nine Playwright production-server journeys:
 
 1. Document check-in → 100% readiness → blocker removal → brief event → refresh persistence.
 2. Room overlap resolution → access support closure → reviewer SLA command → stage reset and note → live brief.
 3. Cohort change → board → sensitive-case cancellation → clock simulation → reset.
 4. Mobile navigation → accessible command palette → brief → no document-width overflow.
 5. Axe WCAG A/AA scans of all four workspaces, participant inspector and command menu; keyboard focus and Escape restoration.
+
+6. Desktop split inspector → resized interactive workspace → selected records → Escape and queue scroll preservation.
+7. Accessible board move → stage clock reset → Offer/Accepted confirmation → keyboard focus → audit and refresh persistence.
+8. Live brief command → destination focus → audited demo advance → record command focus.
+9. Tablet modal drawer → background isolation → reduced motion → accessibility and no width overflow.
 
 Use the installed system Chromium where available; otherwise install a Playwright browser or set `PLAYWRIGHT_EXECUTABLE_PATH`. Each test has its own browser context/storage. Tests inspect user-visible outcomes and do not accept an empty or skipped suite as proof. Browser error console, screenshots, focus flow and automated accessibility scans complement the tests.
 
@@ -38,4 +43,4 @@ Firefox/WebKit, real assistive-technology evaluation, concurrent editing, permis
 
 ## Verified outcome
 
-Final run in this cloud machine: lint, typecheck and build passed; all 24 Vitest tests and all 5 Playwright tests passed, none skipped. Axe detected no WCAG A/AA violations in the scanned surfaces. This is automated evidence, not a claim of complete accessibility certification.
+Final run in this cloud machine: lint, typecheck and build passed; all 28 Vitest tests and all 9 Playwright tests passed, none skipped. Axe detected no WCAG A/AA violations in the scanned surfaces. This is automated evidence, not a claim of complete accessibility certification.

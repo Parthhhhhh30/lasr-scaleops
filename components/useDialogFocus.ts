@@ -17,7 +17,18 @@ export function useDialogFocus() {
         !previous.matches(":disabled") &&
         previous !== document.body
       ) {
-        previous.focus();
+        previous.focus({ preventScroll: true });
+        return;
+      }
+      const focusKey = previous?.dataset.focusKey;
+      const replacement = focusKey
+        ? Array.from(
+            document.querySelectorAll<HTMLElement>("[data-focus-key]"),
+          ).find((element) => element.dataset.focusKey === focusKey)
+        : null;
+      if (replacement) {
+        replacement.scrollIntoView({ block: "nearest", inline: "nearest" });
+        replacement.focus({ preventScroll: true });
         return;
       }
       document
