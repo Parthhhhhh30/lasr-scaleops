@@ -1,5 +1,9 @@
 # CohortOps: 60–90 second recruiter walkthrough
 
+**Production demo:** https://lasr-scaleops.vercel.app/
+
+The route is verified against the repository’s synthetic seed. Independent verification of the deployed host awaits test-network access.
+
 Use a desktop window at least 1280px wide. Start from Winter ’27 in Cohort Control. If you have already explored, open **Demo controls → Reset demo state → Reset demo data** first. All names and policies are fictional. Changes persist in this browser only.
 
 | Time | Exact action | Suggested explanation and visible result |

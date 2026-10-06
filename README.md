@@ -36,7 +36,7 @@ Changes persist locally across refreshes. Reset clears changes, notes and remind
 
 ## Public deployment
 
-The project is prepared for Vercel, with no database or secrets required. Public deployment is pending account authentication; no live URL has yet been verified. [DEPLOYMENT.md](DEPLOYMENT.md) provides exact import settings and the public browser-QA command.
+The project owner has deployed the application to https://lasr-scaleops.vercel.app/. No database or runtime secrets are required. Independent public browser verification is blocked by the test environment’s network access. [DEPLOYMENT.md](DEPLOYMENT.md) records the production URL, reproduction settings and public QA command.
 
 ## Running locally
 

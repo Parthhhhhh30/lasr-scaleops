@@ -50,4 +50,4 @@ Commands close their palette before focusing the current working surface or the 
 
 ## Hosting and validation boundary
 
-A standard Next.js production build is deployable on Vercel without a database or runtime credentials. Hosting serves the application; datasets still live separately in each visitor’s browser. Browser fixtures fail on console errors and uncaught exceptions. `PLAYWRIGHT_BASE_URL` selects a real remote host and disables local-server startup for post-deployment verification. Public hosting remains unverified until account authentication, deployment and those checks complete.
+A standard Next.js production build is deployable on Vercel without a database or runtime credentials. Hosting serves the application; datasets still live separately in each visitor’s browser. Browser fixtures fail on console errors and uncaught exceptions. `PLAYWRIGHT_BASE_URL` selects a real remote host and disables local-server startup for post-deployment verification. The project owner supplied a Vercel deployment; public-host verification awaits test-network access and completion of those checks.

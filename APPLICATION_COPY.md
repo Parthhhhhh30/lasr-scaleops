@@ -29,3 +29,12 @@ CohortOps is an independent programme operations prototype inspired by the LASR 
 “I defined the operating problem, requirements, safeguards, testing standard and product decisions. I used Codex-assisted development to implement and iterate the Next.js and TypeScript prototype, so I would not claim to have manually written every line. The work helped me make distinctions such as checklist readiness versus legal eligibility, recording a reviewer’s decision versus automating selection, and a deterministic live brief versus model-generated text. I can demonstrate those choices through the workflows and tests. The next production step would be authenticated server-side persistence and permissions, rather than adding AI for its own sake.”
 
 Adjust the learning statement to your actual experience before submitting it. Be ready to explain the pure OpsEngine, local repository boundary, stage clock reset, human confirmations and limits of browser-owned audit data.
+
+## E. Portfolio / application link block
+
+**Project:** CohortOps
+**Live demo:** https://lasr-scaleops.vercel.app/
+**GitHub:** https://github.com/Parthhhhhh30/lasr-scaleops
+**Description:** An independent programme operations prototype connecting owned exceptions, admissions coordination, participant readiness and deterministic reporting with explicit human-review safeguards.
+
+The deployment URL was supplied by the project owner; independent public QA remains blocked by the test environment’s network access. Do not describe the deployment as independently verified until those checks pass.

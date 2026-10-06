@@ -16,7 +16,7 @@
 ## Current
 - CohortOps refinement complete: desktop split inspector, compact status rail, live brief, accessible board moves, grouped demo controls, command focus and readable supporting text. Domain rules, dataset schemas, persistence and audit behavior are retained; filter reset notification is ephemeral UI state.
 - Final code and recruiter packaging verified locally with Node 24 and system Chromium. The brief now derives its year from the demo clock; a regression test covers crossing into 2028.
-- Public deployment is blocked solely by Vercel account authentication. No hosting connector, CLI session, linked project or deployment credentials are available. See DEPLOYMENT.md for exact import settings and post-deployment QA; no public URL or public-test claim has been added.
+- The project owner supplied the Vercel production deployment: https://lasr-scaleops.vercel.app/. Public QA was attempted on 6 October 2026 but the testing environment’s egress proxy rejects CONNECT requests with HTTP 403 before reaching the application. Browser journeys consequently fail at navigation; no public behavior, asset, accessibility or responsive verification is claimed. The exact hostname has been added to the saved environment network draft; applying that configuration is required to resume.
 
 ## Validation evidence
 
@@ -32,8 +32,9 @@
 | Keyboard focus | Commands focus their destination; Escape restores focus; moved board controls retain keyboard focus |
 | Development startup | Hydration and hot-reload connection verified; loopback development origin explicitly configured |
 | Responsive | Mobile and tablet journeys pass; desktop split view preserves queue scroll; no document-width overflow |
-| External-URL runner mode | 2 representative journeys passed against the local production URL with local-server startup disabled; public host remains untested |
-| Browser health | Every production journey passed with zero console errors or uncaught exceptions |
+| External-URL runner mode | 2 representative journeys passed against the local production URL with local-server startup disabled; public host verification is blocked by test-network access |
+| Browser health (local) | Every local production journey passed with zero console errors or uncaught exceptions |
+| Public Vercel browser QA | Attempted; 11 journeys could not complete because the test proxy blocks navigation. Not application-regression evidence |
 | Public-repository audit | No credential-pattern, private-key, local-path or generated-artifact matches in intentional source files |
 | Repository whitespace check | Passed |
 
@@ -41,7 +42,7 @@ Tests found and fixed the strict 72-hour threshold, mobile command-button naming
 
 ## Remaining
 - No required code, recruiter material or local validation is outstanding. Five production screenshots recaptured and reviewed; the brief shows Maya’s completed checklist with no toast, and the command palette has intentional selection without clipped list entry. Visual checks covered 35 surface/viewport combinations at 390, 768, 1024, 1280, 1366 and 1440px, with no document-width overflow or browser errors.
-- Required public demo: sign in to Vercel, import Parthhhhhh30/lasr-scaleops with the documented defaults, deploy, and provide the production URL. Public end-to-end QA and the verified README live link must follow.
+- Required completion step: enable test-environment access to lasr-scaleops.vercel.app, rerun the public browser/accessibility and responsive checks, then promote the README link and verification status. Deployment itself is no longer an outstanding user action.
 - Production roadmap: server-backed repository, authorization, protected documents, concurrent transactions, communication review/delivery tracking and calendar integration.
 - Broader assistive-technology and Firefox/WebKit validation before production use.
 
